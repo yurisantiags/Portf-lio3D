@@ -4,14 +4,12 @@ import Login from './components/login'
 import Survey from './components/survey'
 import LkButton from './components/lkbutton'
 import GhButton from './components/ghbutton'
-import Text from './components/text'
 
-export default function App() {
+export default function Home() {
   return (
     <div>
 <Navbar/>
 <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Text/>
     <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-4'>
     <LkButton/>
     <GhButton/>

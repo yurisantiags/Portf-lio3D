@@ -17,11 +17,49 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: url(/img/background.png);
+  background-repeat: no-repeat;
+ 
+  
 }
+
+/* Text.css */
+@keyframes slide {
+  0%, 100% {
+    position: absolute;
+    left: -100%;
+    opacity: 0;
+  }
+  5%, 95% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.animated-slide {
+  position: relative;
+  animation: slide 8s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.animated-slide span {
+  display: inline-block;
+  animation: slide 8s linear infinite;
+  opacity: 0;
+}
+
+.animated-slide span:nth-child(1) {
+  animation-delay: 1s; /* Atraso para a primeira letra */
+}
+
+.animated-slide span:nth-child(2) {
+  animation-delay: 2s; /* Atraso para a segunda letra */
+}
+
+
+
+
