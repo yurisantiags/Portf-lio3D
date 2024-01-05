@@ -61,5 +61,20 @@ body {
 }
 
 
+/* card */
+@keyframes rotateCard {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.shiny-card {
+  animation: rotateCard 5s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
 
 

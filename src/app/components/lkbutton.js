@@ -1,5 +1,5 @@
 'use client';
-export default function GhButton() {
+export default function LkButton() {
     const openLinkedin = () => {
       window.open('https://www.linkedin.com/in/yuri-santiago/', '_blank');
     };

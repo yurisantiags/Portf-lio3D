@@ -11,13 +11,13 @@ export default function Navbar() {
   return (
     <nav className="bg-black bg-opacity-5 py-3 fixed w-full top-0 z-10">
       <div className="container mx-auto flex items-center justify-between">
-        <a href='/page.js'>
-          <img src="img/Linktree.png" alt="Logo" className="h-12 w-auto ml-4" />
+        <a href='/home.js'>
+          <img src="img/logo.png" alt="Logo" className="h-12 w-auto ml-4" />
         </a>
         <div className="hidden md:flex space-x-4"> {/* Oculto em dispositivos menores que md (médio) */}
-          <a href="/sobre" className="text-white hover:text-gray-300 opacity-75  text-sm">Sobre Mim</a>
-          <a href="/contatos" className="text-white hover:text-gray-300 opacity-75 text-sm">Contatos</a>
-        </div>
+  <a href="app/pages/aboutMe.js" className="text-white  opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Sobre Mim</a>
+  <a href="/contatos" className="text-white  opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Contatos</a>
+</div>
         <div className="md:hidden"> {/* Visível apenas em dispositivos menores que md (médio) */}
           {/* Ícone do menu para dispositivos móveis */}
           <button onClick={toggleMobileMenu} className="text-white hover:text-gray-300">
