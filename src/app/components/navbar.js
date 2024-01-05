@@ -9,9 +9,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-black bg-opacity-10 py-3">
+    <nav className="bg-black bg-opacity-5 py-3 fixed w-full top-0 z-10">
       <div className="container mx-auto flex items-center justify-between">
-        <img src="img/logo.png" alt="Logo" className="h-8 w-auto ml-4 opacity-0" />
+        <a href='/page.js'>
+          <img src="img/Linktree.png" alt="Logo" className="h-12 w-auto ml-4" />
+        </a>
         <div className="hidden md:flex space-x-4"> {/* Oculto em dispositivos menores que md (médio) */}
           <a href="/sobre" className="text-white hover:text-gray-300 opacity-75  text-sm">Sobre Mim</a>
           <a href="/contatos" className="text-white hover:text-gray-300 opacity-75 text-sm">Contatos</a>
@@ -38,7 +40,7 @@ export default function Navbar() {
       </div>
       {/* Menu para dispositivos móveis */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black bg-opacity-5">
+        <div className="md:hidden bg-black bg-opacity-0">
           <a href="/sobre" className="block text-white py-2 px-4 hover:bg-gray-700 ">Sobre Mim</a>
           <a href="/contatos" className="block text-white py-2 px-4 hover:bg-gray-700">Contatos</a>
         </div>

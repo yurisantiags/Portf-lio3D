@@ -19,7 +19,7 @@
 body {
   background-image: url(/img/background.png);
   background-repeat: no-repeat;
- 
+ background-size: cover;
   
 }
 
@@ -30,7 +30,7 @@ body {
     left: -100%;
     opacity: 0;
   }
-  5%, 95% {
+  1%, 100% {
     opacity: 1;
   }
   100% {
