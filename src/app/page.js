@@ -8,6 +8,7 @@ import LkButton from './components/lkbutton'
 import GhButton from './components/ghbutton'
 import Text from './components/text'
 import Projects from './components/projects';
+import ProjectsText from './components/projectsText';
 
 export default function App() {
   const projectsSectionRef = useRef(null);
@@ -26,12 +27,23 @@ export default function App() {
     <Projects projectsSectionRef={projectsSectionRef}/>
 </main>
 </div>
-<section className='flex min-h-screen flex-col items-center justify-center p-24' ref={projectsSectionRef}>
-  <div className='h-full w-full text-center'>
-    <h1 className='text-white font-semibold ml-2'>Projetos</h1>
+<section className='flex min-h-screen items-center justify-center p-24' ref={projectsSectionRef}>
+  <div className='h-full w-full'>
+  
+    {/* <h1 className='text-white font-semibold ml-2'>Projetos</h1> */}
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
       <Survey/>
-      <Login/>
+      <Login/>  
+      <Soon />
+      <Soon/>  
+       
+    </div>
+    
+    <ProjectsText/> 
+   
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+    <Soon />
+      <Soon/>   
       <Soon />
       <Soon/>    
     </div>
