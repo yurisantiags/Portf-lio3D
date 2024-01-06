@@ -4,7 +4,7 @@ import Home from './pages/home';
 
 export default function App() {
   return (
-    <div>
+    <div className=' min-h-screen'>
       <Home/>
       {/* <About/> */}
       <Contacts/>
