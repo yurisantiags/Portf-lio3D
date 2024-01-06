@@ -5,7 +5,7 @@ export default function LkButton() {
     };
   
     return (
-      <button className="bg-white rounded-xl px-14 hover:scale-105 duration-500 opacity-75" onClick={openLinkedin}>
+      <button className="bg-white rounded-xl  hover:scale-105 duration-500 opacity-75 shadow-lg" onClick={openLinkedin}>
         Linkedin
       </button>
     );

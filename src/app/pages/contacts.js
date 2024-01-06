@@ -1,25 +1,24 @@
 import LkButton from "../components/lkbutton";
 import GhButton from "../components/ghbutton";
 import Navbar from "../components/navbar";
+import Card from "../components/card";
+import ContactsText from "../components/contactsText";
 
 export default function Contacts(){
     return(
-        <div>
-  <Navbar/>
-      <main className="flex min-h-screen items-start p-24">
-      <div className="card perspective-1000 transform-style-preserve-3d transition-transform">
-      <h1 className=" text-white"> Currículo</h1>
-        <div className="w-64 rounded-lg shadow-md shiny-card">
-          <a href="https://www.linkedin.com/in/yuri-santiago/" target="_blank">
-            <img src="img/jpg.png" alt="Logo" className="h-auto w-auto ml-4" />
-          </a>
-        </div>
-        <GhButton/>
-        <LkButton/>
-      </div>
-     
-    </main>
-        </div>
+      <section>
+        <Navbar/>
+        <main className="flex min-h-screen items-center justify-center ">
+          <div className="card perspective-1000 transform-style-preserve-3d transition-transform">
+            <Card/>
+          <div className='grid mt-8 grid-cols md:grid-cols-2 lg:grid-cols-2 gap-2'>
+            <GhButton/>
+            <LkButton/>
+          </div>
+            <ContactsText/>
+          </div>
+        </main>
+      </section>
       
     )
 }

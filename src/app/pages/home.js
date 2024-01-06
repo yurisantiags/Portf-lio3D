@@ -11,13 +11,13 @@ import ProjectsText from '../components/projectsText';
 export default function Home() {
   const projectsSectionRef = useRef(null);
   return (
-<div>
+<main>
     <div className='h-full w-full'>
       <Navbar/>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <Text/>
         <Projects projectsSectionRef={projectsSectionRef}/>
-      </main>
+      </div>
     </div>
   <section className='flex min-h-screen items-center justify-center p-24' ref={projectsSectionRef}>
     <div className='h-full w-full'>
@@ -36,6 +36,6 @@ export default function Home() {
       </div>
     </div>
   </section>
-</div>
+</main>
   )
 }

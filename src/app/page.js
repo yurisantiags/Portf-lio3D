@@ -7,7 +7,7 @@ export default function App() {
     <div>
       <Home/>
       <About/>
-      {/* <Contacts/> */}
+      <Contacts/>
     </div>
 
   )
