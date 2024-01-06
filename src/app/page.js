@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div>
       <Home/>
-      <About/>
+      {/* <About/> */}
       <Contacts/>
     </div>
 
