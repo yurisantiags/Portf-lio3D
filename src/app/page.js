@@ -1,13 +1,14 @@
-import About from './pages/aboutMe';
-import Contacts from './pages/contacts';
-import Home from './pages/home';
+// import Contacts from "./pages/contacts";
+import Home from "./pages/home";
+import ProjectsPage from "./pages/projects";
+
 
 export default function App() {
   return (
-    <div className=' min-h-screen'>
+    <div className='min-h-screen'>
       <Home/>
       {/* <About/> */}
-      <Contacts/>
+      <ProjectsPage/>
     </div>
 
   )

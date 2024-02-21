@@ -1,6 +1,14 @@
+'use client';
+import React,{useEffect} from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
 export default function Login(){
+  useEffect(() => {
+    AOS.init();
+  }, [])
     return(
-        <div className="mb-8 md:mb-32 flex hover:scale-105 duration-500 rounded-lg text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-left" style={{
+        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="mb-8 md:mb-32 flex hover:scale-105 duration-500 rounded-lg text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-left" style={{
             backgroundImage: 'url("/img/Senha.png")',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,15 +9,22 @@ export default function Navbar() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" 
+    });
+  };
+
   return (
-    <nav className="bg-black bg-opacity-5 py-3 fixed w-full top-0 z-10">
+    <nav className="bg-black bg-opacity-0 py-3 fixed w-full top-0 z-10">
       <div className="container mx-auto flex items-center justify-between">
-        <a href='/home.js'>
+        <a href='#' onClick={scrollToTop}>
           <img src="logoNaoAdicionada.png" className="h-12 w-auto ml-4" />
         </a>
         <div className="hidden md:flex space-x-4"> {/* Oculto em dispositivos menores que md (médio) */}
-  <a href="app/pages/aboutMe.js" className="text-white  opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Sobre Mim</a>
-  <a href="/contatos" className="text-white  opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Contatos</a>
+  <a href="app/pages/aboutMe.js" className="text-white  opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">About</a>
+  <a href="/contatos" className="text-white  opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Contacts</a>
 </div>
         <div className="md:hidden"> {/* Visível apenas em dispositivos menores que md (médio) */}
           {/* Ícone do menu para dispositivos móveis */}
@@ -41,8 +49,12 @@ export default function Navbar() {
       {/* Menu para dispositivos móveis */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-black bg-opacity-0">
-          <a href="/sobre" className="block text-white py-2 px-4 hover:bg-gray-700 ">Sobre Mim</a>
-          <a href="/contatos" className="block text-white py-2 px-4 hover:bg-gray-700">Contatos</a>
+        <Link href="/aboutMe">
+  <a className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">About Me</a>
+</Link>
+<Link href="/contatos">
+  <a className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Contacts</a>
+</Link>
         </div>
       )}
     </nav>
