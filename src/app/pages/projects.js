@@ -16,7 +16,7 @@ return(
       Here you can find some of my projects and solutions developed
       </h2>
     </div>
-      <div className=' mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 '>
+      <div className=' mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 '>
           <Soon/> 
           <Soon/>
           <Soon/> 
