@@ -50,7 +50,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-black bg-opacity-0">
         <Link href="/aboutMe">
-  <a className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">About Me</a>
+  <a className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">About</a>
 </Link>
 <Link href="/contatos">
   <a className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Contacts</a>

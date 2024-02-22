@@ -1,15 +1,14 @@
 import Soon from '../components/soon'
 import Login from '../components/login'
-import Survey from '../components/survey'
-// import Text from '../components/text'
-// import Projects from '../components/projects';
-// import ProjectsText from '../components/projectsText';
+import Footer from '../components/footer';
 
 export default function ProjectsPage(){
 return(
-    <section id='projects-section' className='flex min-h-screen items-center justify-center p-24' >
-    <div className='min-h-screen'>
-    <div className='mt-10'>
+  
+    <section id='projects-section'  >
+    <div className='flex min-h-screen items-center justify-center p-24' >
+    <div className='min-h-screen flex items-center flex-col'>
+    <div className='mt-10 text-center'>
       <h3 data-aos="fade-up" className='text-gray-300 text-sm font-semibold text-transform: uppercase;'>
       Developed Projects
       </h3>
@@ -17,26 +16,17 @@ return(
       Here you can find some of my projects and solutions developed
       </h2>
     </div>
-      <div className=' mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 '>
-        <Survey/>
-        {/* <Login/>  
-        <Soon/>
-        <Soon/>   */}
-      </div>
-      <div className='mt-44 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-        <Soon/>
-        <Soon/>   
-        <Soon/>
-        <Soon/>    
-      </div>
-      <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-        <Soon/>
-        <Soon/>   
-        <Soon/>
-        <Soon/>    
+      <div className=' mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 '>
+          <Soon/> 
+          <Soon/>
+          <Soon/> 
       </div>
     </div>
+    </div>
+  <Footer/>
   </section>
+  
+  
 )
 
 }
