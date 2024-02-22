@@ -47,7 +47,7 @@ export default function Navbar() {
       </div>
       {/* Menu para dispositivos móveis */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black bg-opacity-0 flex flex-col items-end">
+        <div className="md:hidden bg-black bg-opacity-0 flex flex-col items-end mr-4">
           <Link href="/aboutMe">
             <a className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all block mb-2">About</a>
           </Link>
