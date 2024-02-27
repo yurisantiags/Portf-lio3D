@@ -23,8 +23,8 @@ export default function Navbar() {
           <img src="logoNaoAdicionada.png" className="h-12 w-auto ml-4" />
         </a>
         <div className="hidden md:flex space-x-4"> {/* Oculto em dispositivos menores que md (médio) */}
-          <a href="app/pages/aboutMe.js" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">About</a>
-          <a href="/contatos" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Contacts</a>
+          <Link href="/aboutMe.js" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">About</Link>
+          <Link href="src/app/contacts.js" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Contacts</Link>
         </div>
         <div className="md:hidden flex items-center"> {/* Visível apenas em dispositivos menores que md (médio) */}
           {/* Ícone do menu para dispositivos móveis */}
@@ -48,12 +48,12 @@ export default function Navbar() {
       {/* Menu para dispositivos móveis */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-black bg-opacity-0 flex flex-col items-end mr-4">
-          <Link href="/aboutMe">
-            <a className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all block mb-2">About</a>
-          </Link>
-          <Link href="/contatos">
-            <a className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all block mb-2">Contacts</a>
-          </Link>
+        
+            <Link href="/aboutMe" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all block mb-2">About</Link>
+         
+  
+            <Link href="/contacts" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all block mb-2">Contacts</Link>
+    
         </div>
       )}
     </nav>
