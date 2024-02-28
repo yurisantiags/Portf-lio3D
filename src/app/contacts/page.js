@@ -1,16 +1,17 @@
 import GhButton from "../components/ghbutton";
 import Navbar from "../components/navbar";
+import Building from '../components/building';
 
-export default function Contacts(){
-    return(
-      <section>
-        <Navbar/>
-        <main className="min-h-screen">
-          <div className="container my-20 mx-auto">
-            <h3>Contact us</h3>
-          </div>
-        </main>
-      </section>
-      
-    )
+export default function Contacts() {
+  return (
+<main>
+    <div className='h-full w-full'>
+      <Navbar/>
+      <div className="flex min-h-screen flex-col items-center justify-between p-24">
+        <Building/>
+      </div>
+    </div>
+</main>
+
+  )
 }
