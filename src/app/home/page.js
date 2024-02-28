@@ -1,8 +1,9 @@
 'use client';
 import React, { useRef } from 'react';
-import Navbar from './components/navbar'
-import Text from './components/text'
-import Projects from './components/projects';
+import Navbar from '../components/navbar'
+import Text from '../components/text'
+import ProjectsPage from '../projects/projects';
+import Projects from '../components/projectButton';
 
 export default function Home() {
   const projectsSectionRef = useRef(null);
@@ -15,6 +16,7 @@ export default function Home() {
         <Projects projectsSectionRef={projectsSectionRef}/>
       </div>
     </div>
+    <ProjectsPage/>
 </main>
 
   )

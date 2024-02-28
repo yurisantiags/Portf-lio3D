@@ -1,5 +1,5 @@
-import GhButton from "./components/ghbutton";
-import Navbar from "./components/navbar";
+import GhButton from "../components/ghbutton";
+import Navbar from "../components/navbar";
 
 export default function Contacts(){
     return(

@@ -1,8 +1,0 @@
-'use client';
-export default function About(){
-    return(
-        <div>
-            <h1>oi</h1>
-        </div>
-    )
-}
