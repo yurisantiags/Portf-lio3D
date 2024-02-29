@@ -12,7 +12,7 @@ return(
       <h3 data-aos="fade-up" className='text-gray-300 text-sm font-semibold text-transform: uppercase;'>
       Developed Projects
       </h3>
-      <h2 data-aos="fade-up" className='text-gray-500 pt-5 text-2xl max-w-xl font-bold text-transform: uppercase;'>
+      <h2 data-aos="fade-up" className='text-gray-500 pt-5 text-sm md:text-2xl max-w-xl font-bold text-transform: uppercase;'>
       Here you can find some of my projects and solutions developed
       </h2>
     </div>
