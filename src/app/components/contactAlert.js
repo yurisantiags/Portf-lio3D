@@ -3,13 +3,28 @@ import React, { useState, useEffect } from 'react';
 
 const AlertMessage = () => {
   const [showAlert, setShowAlert] = useState(true);
+  const [alertPositionClass, setAlertPositionClass] = useState('');
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      const positionClass = window.innerWidth < 640 ? 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' : 'fixed bottom-10 right-10';
+      setAlertPositionClass(positionClass);
+    };
+
+    handleWindowResize(); // Call it once to set the initial position
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once
 
   const handleCloseAlert = () => {
     setShowAlert(false);
   };
 
   const showAlertClass = showAlert ? 'block' : 'hidden';
-  const alertPositionClass = window.innerWidth < 640 ? 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' : 'fixed bottom-10 right-10';
 
   return (
     <div className={`${showAlertClass} ${alertPositionClass} bg-white bg-opacity-20 border border-white text-white opacity-75 px-4 py-3 rounded-md shadow-md`}>
