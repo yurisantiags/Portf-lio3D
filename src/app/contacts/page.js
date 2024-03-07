@@ -9,30 +9,31 @@ import Building from "../components/building";
 
 export default function Contacts() {
   return (
-//   <section >
-//     <Navbar/>
-//     <div className='flex min-h-screen items-center justify-center ' >
-//     <div className='min-h-screen justify-center flex items-center flex-col'>
-//       <ModelViewer />
-//       <EmailBox/>
-//      <div className="flex mt-8 space-x-8">
-//         <GhButton/>
-//         <LkButton/>
-//       </div>
-// </div>
-// </div>
-// <Footer/>
-// <AlertMessage/>
-// </section>  
-<main>
+  <section >
+    <Navbar/>
+    <div className='flex min-h-screen items-center justify-center ' >
+    <div className='min-h-screen justify-center flex items-center flex-col'>
+      <ModelViewer />
+      <EmailBox/>
+     <div className="flex mt-8 space-x-8">
+        <GhButton/>
+        <LkButton/>
+      </div>
+</div>
+</div>
+<Footer/>
+<AlertMessage/>
+</section>  
+
+  )
+}
+
+{/* <main>
     <div className='h-full w-full'>
       <Navbar/>
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <Building/>
       </div>
     </div>
-</main>
-  )
-}
-
+</main> */}
 
