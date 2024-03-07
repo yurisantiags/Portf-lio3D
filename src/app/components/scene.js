@@ -93,8 +93,10 @@ export default function ModelViewer() {
         if (controlsRef.current) {
           controlsRef.current.dispose();
         }
+        if (rendererRef.current && sceneRef.current) {
+          sceneRef.current.removeChild(rendererRef.current.domElement);
+        }
         rendererRef.current.dispose();
-        sceneRef.current.removeChild(rendererRef.current.domElement);
       };
     }
   }, []);
