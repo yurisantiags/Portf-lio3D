@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
-const AlertMessage = () => {
+export default function AlertMessage(){
     const [showAlert, setShowAlert] = useState(true);
   
     const handleCloseAlert = () => {
@@ -35,4 +35,3 @@ const AlertMessage = () => {
     );
   };
   
-  export default AlertMessage;

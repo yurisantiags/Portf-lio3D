@@ -3,10 +3,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { Canvas } from 'react-three-fiber';
 
 
-function ModelViewer() {
+export default function ModelViewer() {
   const sceneRef = useRef();
   const rendererRef = useRef();
   const modelRef = useRef();
@@ -120,4 +119,3 @@ function ModelViewer() {
   return <div ref={sceneRef} />;
 }
 
-export default ModelViewer;
