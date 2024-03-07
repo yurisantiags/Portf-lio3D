@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className="bg-black bg-opacity-0 fixed w-full top-0 z-10">
       <div className="container mx-auto flex items-center justify-between">
         <a href='#' onClick={scrollToTop}>
-          <img src="logoNaoAdicionada.png" className="h-12 w-auto ml-4" />
+          <img src="" className="h-12 w-auto ml-4" />
         </a>
         <div className="hidden md:flex space-x-4"> {/* Oculto em dispositivos menores que md (médio) */}
           <Link href="/home" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Home</Link>

@@ -1,4 +1,3 @@
-'use client';
 import GhButton from "../components/ghbutton";
 import Navbar from "../components/navbar";
 import ModelViewer from "../components/scene";

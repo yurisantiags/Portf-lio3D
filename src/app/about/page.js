@@ -1,4 +1,3 @@
-'use client';
 import Building from '../components/building';
 import Navbar from '../components/navbar'
 
