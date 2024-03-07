@@ -1,4 +1,3 @@
-'use client';
 export default function GhButton() {
     const openGitHub = () => {
       window.open('https://github.com/YuriSantiag', '_blank');

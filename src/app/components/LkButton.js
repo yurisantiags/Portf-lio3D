@@ -1,4 +1,3 @@
-'use client';
 export default function LkButton() {
     const openLinkedin = () => {
       window.open('https://www.linkedin.com/in/yuri-santiago/', '_blank');
