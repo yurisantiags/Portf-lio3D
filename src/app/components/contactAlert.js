@@ -37,7 +37,7 @@ const AlertMessage = () => {
           ></path>
         </svg>
       </button>
-      <p className='text-center'>Interact with the page (envelope).</p>
+      <p className='text-center'>Interact with the page (mailbox).</p>
     </div>
   );
 };

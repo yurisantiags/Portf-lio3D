@@ -9,14 +9,13 @@ export default function ModelViewer() {
   const sceneRef = useRef();
   const rendererRef = useRef();
   const modelRef = useRef();
-  const scaleDirectionRef = useRef(1);
   const controlsRef = useRef(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 2.5;
+      camera.position.set(0, 0, 5); // Adjusted camera position
       const renderer = new THREE.WebGLRenderer({ alpha: true });
       const width = window.innerWidth * 0.7;
       const height = window.innerHeight * 0.7;
@@ -34,7 +33,7 @@ export default function ModelViewer() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-16.gltf',
+        'img/scene-18.gltf', //trocar imagem
         (gltf) => {
           gltf.scene.traverse((child) => {
             if (child.isMesh) {
@@ -45,32 +44,29 @@ export default function ModelViewer() {
           });
 
           gltf.scene.scale.set(1.0, 1.0, 1.0);
+          // Adjust object position
+          gltf.scene.position.y = 0.5; // Move the object 0.5 units upwards
           modelRef.current = gltf.scene;
           scene.add(gltf.scene);
 
           const controls = new OrbitControls(camera, renderer.domElement);
           controlsRef.current = controls;
-          controls.enableDamping = true;
-          controls.dampingFactor = 0.25;
 
-          function animateModel() {
-            const scaleSpeed = 0.005;
-            modelRef.current.scale.x += scaleSpeed * scaleDirectionRef.current;
-            modelRef.current.scale.y += scaleSpeed * scaleDirectionRef.current;
-            modelRef.current.scale.z += scaleSpeed * scaleDirectionRef.current;
+          // Set restrictions to only left/right rotation
+          controls.enableRotate = true;
+          controls.enablePan = false;
+          controls.minPolarAngle = Math.PI / 2; // Set minimum polar angle to limit downward rotation
+          controls.maxPolarAngle = Math.PI / 2; // Set maximum polar angle to limit upward rotation
 
-            if (modelRef.current.scale.x <= 0.5 || modelRef.current.scale.x >= 1.5) {
-              scaleDirectionRef.current *= -1;
-            }
+          renderer.render(scene, camera);
 
-            const rotationSpeed = 0.01;
-            modelRef.current.rotation.y += rotationSpeed;
-
+          // Animate function
+          const animate = () => {
+            controlsRef.current.update(); // Update controls
             renderer.render(scene, camera);
-            requestAnimationFrame(animateModel);
-          }
-
-          animateModel();
+            requestAnimationFrame(animate);
+          };
+          animate(); // Start animation loop
         },
         undefined,
         (error) => {
@@ -86,7 +82,7 @@ export default function ModelViewer() {
 
       window.addEventListener('resize', handleResize);
 
-      renderer.domElement.style.cursor = 'pointer';
+      renderer.domElement.style.cursor = 'grab'; // Change cursor style
 
       return () => {
         window.removeEventListener('resize', handleResize);
