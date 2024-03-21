@@ -15,7 +15,7 @@ export default function ModelViewer() {
     if (typeof window !== 'undefined') {
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set(0, 0, 5); // Adjusted camera position
+      camera.position.set(0, 0, 2); // Adjusted camera position
       const renderer = new THREE.WebGLRenderer({ alpha: true });
       const width = window.innerWidth * 0.7;
       const height = window.innerHeight * 0.7;
@@ -33,7 +33,7 @@ export default function ModelViewer() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-18.gltf', //trocar imagem
+        'img/scene-20.gltf', //trocar imagem
         (gltf) => {
           gltf.scene.traverse((child) => {
             if (child.isMesh) {
@@ -45,7 +45,7 @@ export default function ModelViewer() {
 
           gltf.scene.scale.set(1.0, 1.0, 1.0);
           // Adjust object position
-          gltf.scene.position.y = 0.5; // Move the object 0.5 units upwards
+          gltf.scene.position.y = 0.01; // Move the object 0.5 units upwards
           modelRef.current = gltf.scene;
           scene.add(gltf.scene);
 
@@ -62,6 +62,10 @@ export default function ModelViewer() {
 
           // Animate function
           const animate = () => {
+            // Rotate the model
+            if (modelRef.current) {
+              modelRef.current.rotation.y += 0.01; // Adjust rotation speed as needed
+            }
             controlsRef.current.update(); // Update controls
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
