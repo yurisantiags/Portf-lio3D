@@ -30,7 +30,7 @@ export default function BackToTopButton() {
       onClick={scrollToTop}
       className={`${
         isVisible ? 'fixed bottom-10 right-6' : 'hidden'
-      } bg-white bg-opacity-5 text-white font-bold py-2 px-4 rounded-full transition duration-300`}
+      } md:bg-white md:bg-opacity-5 text-white font-bold py-2 px-4 rounded-full transition duration-300`}
       title="Voltar ao Topo"
     >
       <svg
