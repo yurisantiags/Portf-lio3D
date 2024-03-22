@@ -4,6 +4,7 @@ import Navbar from '../components/navbar'
 import Text from '../components/text'
 import ProjectsPage from '../projects/projects';
 import Projects from '../components/projectButton';
+import BackToTopButton from '../components/backButton';
 
 export default function Home() {
   const projectsSectionRef = useRef(null);
@@ -17,6 +18,7 @@ export default function Home() {
       </div>
     </div>
     <ProjectsPage/>
+    <BackToTopButton/>
 </main>
 
   )
