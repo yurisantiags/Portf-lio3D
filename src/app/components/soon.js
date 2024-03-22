@@ -13,7 +13,7 @@ export default function Soon() {
   return (
     <div
       ref={squareRef}
-      className="mb-8 md:mb-32 flex  rounded-lg lg:max-w-5xl lg:w-full lg:mb-0 lg:text-left bg-white bg-opacity-5 justify-center items-center"
+      className="mb-2 md:mb-32 flex  rounded-lg lg:max-w-5xl lg:w-full lg:mb-0 lg:text-left bg-white bg-opacity-5 justify-center items-center"
     >
       <a
         href=""
