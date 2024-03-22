@@ -63,13 +63,28 @@ export default function Navbar() {
         </div>
       </div>
       {/* Menu para dispositivos móveis */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-black bg-opacity-0 flex flex-col items-end mr-4">
-            <Link href="/home" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all block mb-2">Home</Link>
-            <Link href="/about" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all block mb-2">About</Link>
-            <Link href="/contacts" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all block mb-2">Contacts</Link>
+      <div className={`md:hidden fixed inset-0 bg-gray-200 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className="container mx-auto flex flex-col items-center justify-center h-screen">
+          <button onClick={toggleMobileMenu} className="text-black hover:text-gray-400 absolute top-4 right-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <Link href="/home" className="text-black text-lg hover:border-b hover:border-gray-400 transition-all block mb-2 text-center">Home</Link>
+          <Link href="/about" className="text-black text-lg hover:border-b hover:border-gray-400 transition-all block mb-2 text-center">About</Link>
+          <Link href="/contacts" className="text-black text-lg hover:border-b hover:border-gray-400 transition-all block mb-2 text-center">Contacts</Link>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
