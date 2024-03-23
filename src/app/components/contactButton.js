@@ -10,7 +10,7 @@ export default function ContactButton() {
         className="fixed bottom-5 left-5 bg-white bg-opacity-5 hover:bg-gray-400 text-white font-medium py-2 px-4 rounded-full transition duration-300"
         title="Contact Me"
       >
-      <FiPhone className="h-6 w-6" />
+      <FiPhone className="h-5 w-5" />
       </button>
     );
   }
