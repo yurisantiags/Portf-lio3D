@@ -29,7 +29,7 @@ export default function BackToTopButton() {
     <button
       onClick={scrollToTop}
       className={`${
-        isVisible ? 'fixed bottom-10 right-5' : 'hidden'
+        isVisible ? 'fixed bottom-5 right-5' : 'hidden'
       } bg-white bg-opacity-5 text-white font-bold py-2 px-4 rounded-full transition duration-300`}
       title="Voltar ao Topo"
     >
