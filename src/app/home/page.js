@@ -5,6 +5,7 @@ import Text from '../components/text'
 import ProjectsPage from '../projects/projects';
 import Projects from '../components/projectButton';
 import BackToTopButton from '../components/backButton';
+import ContactButton from '../components/contactButton';
 
 export default function Home() {
   const projectsSectionRef = useRef(null);
@@ -19,6 +20,7 @@ export default function Home() {
     </div>
     <ProjectsPage/>
     <BackToTopButton/>
+    <ContactButton/>
 </main>
 
   )
