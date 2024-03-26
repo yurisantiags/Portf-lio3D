@@ -2,16 +2,21 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
+import EmailForm from './emailForm';
 export default function Footer(){
     return(
-        <footer className=" pb-5 text-gray-300 opacity-80 ">
-        <div className='hidden lg:flex justify-center'>
-        <div className='grid grid-cols-2 gap-4 gap-x-16'>
-        <Link href="/contacts" className="text-white hover:underline md:text-sm text-xs opacity-75 transition-all">HOME</Link>
-        <Link href="/contacts" className="text-white opacity-75 md:text-sm text-xs hover:underline transition-all">GITHUB</Link>
-        <Link href="/contacts" className="text-white opacity-75 md:text-sm text-xs hover:underline transition-all">ABOUT</Link>
-        <Link href="/contacts" className="text-white opacity-75 md:text-sm text-xs hover:underline transition-all">CONTACTS</Link>
+        <footer className=" bg-gray-400 bg-opacity-5 pb-5 pt-10 text-gray-300 opacity-80 ">
+        <div className='md:justify-center md:items-center md:flex '>
+        <div className='grid grid-cols-2 gap-4 gap-x-16 md:pr-44'>
+        <Link href="/home" className="text-white hover:underline md:text-sm text-xs text-center opacity-75 transition-all">HOME</Link>
+        <Link href="https://github.com/YuriSantiag" target='_blank' className="text-white text-center opacity-75 md:text-sm text-xs hover:underline transition-all">GITHUB</Link>
+        <Link href="/about" className="text-white opacity-75 md:text-sm text-xs hover:underline text-center transition-all">ABOUT</Link>
+        <Link href="/contacts" className="text-white opacity-75 md:text-sm text-xs hover:underline text-center transition-all">CONTACTS</Link>
         </div>
+        <div className='md:pl-96 mt-4'>
+        <EmailForm/>
+        </div>
+        
         </div>
        
         <hr className='opacity-15'></hr>
