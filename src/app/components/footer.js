@@ -1,6 +1,6 @@
-import { FiPhone } from 'react-icons/fi'
 import { FaInstagram } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 export default function Footer(){
     return(
@@ -35,8 +35,8 @@ export default function Footer(){
         <a href="https://www.instagram.com/yurisantiag/" target="_blank" className="bg-white bg-opacity-5 mt-2  hover:bg-gray-400 hover:text-white text-gray-400  p-2 rounded-full transition duration-300">
         <FaInstagram className="h-4 w-4" />
         </a>
-        <a href="" target="_blank" className="bg-white bg-opacity-5 mt-2 hover:bg-gray-400 hover:text-white text-gray-400  p-2 rounded-full transition duration-300">
-        <FiPhone className="h-4 w-4" />
+        <a href="https://github.com/YuriSantiag" target="_blank" className="bg-white bg-opacity-5 mt-2 hover:bg-gray-400 hover:text-white text-gray-400  p-2 rounded-full transition duration-300">
+        <FaGithub className="h-4 w-4" />
         </a>
         </div>
         </div>
