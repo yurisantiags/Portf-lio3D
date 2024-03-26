@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Footer(){
     return(
         <footer className=" pb-5 text-gray-300 opacity-80 ">
-        <div className='flex justify-center'>
+        <div className='hidden lg:flex justify-center'>
         <div className='grid grid-cols-2 gap-4 gap-x-16'>
         <Link href="/contacts" className="text-white hover:underline md:text-sm text-xs opacity-75 transition-all">HOME</Link>
         <Link href="/contacts" className="text-white opacity-75 md:text-sm text-xs hover:underline transition-all">GITHUB</Link>
