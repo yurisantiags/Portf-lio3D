@@ -31,7 +31,7 @@ export default function EmailForm() {
               Send me an email:
             </label>
             <input
-              className="w-full px-4 py-2 mb-4 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+              className="w-full px-4 py-2 mb-4 leading-tight opacity-85 focus:opacity-100 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
               placeholder="Subject"
