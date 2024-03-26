@@ -23,9 +23,9 @@ export default function Navbar() {
           <img src="" className="h-12 w-auto ml-4" />
         </a>
         <div className="hidden md:flex space-x-4"> {/* Oculto em dispositivos menores que md (médio) */}
-          <Link href="/home" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Home</Link>
-          <Link href="/about" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">About</Link>
-          <Link href="/contacts" className="text-white opacity-75 text-sm hover:border-b hover:border-gray-300 transition-all">Contacts</Link>
+          <Link href="/home" className="text-white opacity-75 text-sm hover:underline transition-all">Home</Link>
+          <Link href="/about" className="text-white opacity-75 text-sm hover:underline transition-all">About</Link>
+          <Link href="/contacts" className="text-white opacity-75 text-sm hover:underline transition-all">Contacts</Link>
         </div>
         <div className="md:hidden flex items-center"> {/* Visível apenas em dispositivos menores que md (médio) */}
           {/* Ícone do menu para dispositivos móveis */}
@@ -80,9 +80,9 @@ export default function Navbar() {
               />
             </svg>
           </button>
-          <Link href="/home" className="text-black text-lg hover:border-b hover:border-gray-400 transition-all block mb-2 text-center">Home</Link>
-          <Link href="/about" className="text-black text-lg hover:border-b hover:border-gray-400 transition-all block mb-2 text-center">About</Link>
-          <Link href="/contacts" className="text-black text-lg hover:border-b hover:border-gray-400 transition-all block mb-2 text-center">Contacts</Link>
+          <Link href="/home" className="text-black text-lg hover:underline transition-all block mb-2 text-center">Home</Link>
+          <Link href="/about" className="text-black text-lg hover:underline transition-all block mb-2 text-center">About</Link>
+          <Link href="/contacts" className="text-black text-lg hover:underline transition-all block mb-2 text-center">Contacts</Link>
         </div>
       </div>
     </nav>
