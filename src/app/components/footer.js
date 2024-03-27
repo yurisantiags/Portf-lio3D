@@ -6,14 +6,14 @@ import EmailForm from './emailForm';
 export default function Footer(){
     return(
         <footer className=" bg-gray-400 bg-opacity-5 pb-5 pt-10 text-gray-300 opacity-80 ">
-        <div className='md:justify-center md:items-center md:flex '>
+        <div className='md:justify-center md:items-center pb-5 md:pb-0 md:flex '>
         <div className='grid grid-cols-2 gap-4 md:gap-x-16 md:pr-44'>
         <Link href="/home" className="text-white hover:underline md:text-sm text-xs text-center opacity-75 transition-all">HOME</Link>
         <Link href="https://github.com/YuriSantiag" target='_blank' className="text-white text-center opacity-75 md:text-sm text-xs hover:underline transition-all">GITHUB</Link>
         <Link href="/about" className="text-white opacity-75 md:text-sm text-xs hover:underline text-center transition-all">ABOUT</Link>
         <Link href="/contacts" className="text-white opacity-75 md:text-sm text-xs hover:underline text-center transition-all">CONTACTS</Link>
         </div>
-        <div className='md:pl-96 pr-8 md:pr-0 mt-4'>
+        <div className=' hidden md:pl-96 md:block pr-8 md:pr-0 mt-4'>
         <EmailForm/>
         </div>
         
