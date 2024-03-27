@@ -7,7 +7,7 @@ return(
   
     <section id='projects-section'  >
     <div className='flex min-h-screen items-center justify-center p-24' >
-    <div className='min-h-screen flex items-center flex-col'>
+    <div className='min-h-screen flex justify-center items-center flex-col'>
     <div className='mt-10 text-center'>
       <h3 data-aos="fade-up" className='text-gray-300 text-sm font-semibold text-transform: uppercase;'>
       Developed Projects
@@ -16,8 +16,8 @@ return(
       Here you can find some of my projects and solutions developed
       </h2>
     </div>
-      <div className=''>
-      <div data-aos="">
+      <div className='pt-10'>
+      <div data-aos="fade-up">
       <Soon/> 
       </div>
       </div>

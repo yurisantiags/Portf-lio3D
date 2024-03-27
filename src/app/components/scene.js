@@ -33,7 +33,7 @@ export default function ModelViewer() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-20.gltf', //trocar imagem
+        'img/scene-21.gltf', //trocar imagem
         (gltf) => {
           gltf.scene.traverse((child) => {
             if (child.isMesh) {
@@ -62,10 +62,6 @@ export default function ModelViewer() {
 
           // Animate function
           const animate = () => {
-            // Rotate the model
-            if (modelRef.current) {
-              modelRef.current.rotation.y += 0.01; // Adjust rotation speed as needed
-            }
             controlsRef.current.update(); // Update controls
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
