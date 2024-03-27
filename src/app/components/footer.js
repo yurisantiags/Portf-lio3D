@@ -13,7 +13,7 @@ export default function Footer(){
         <Link href="/about" className="text-white opacity-75 md:text-sm text-xs hover:underline text-center transition-all">ABOUT</Link>
         <Link href="/contacts" className="text-white opacity-75 md:text-sm text-xs hover:underline text-center transition-all">CONTACTS</Link>
         </div>
-        <div className='md:pl-96 pr-10 mt-4'>
+        <div className='md:pl-96 pr-8 md:pr-0 mt-4'>
         <EmailForm/>
         </div>
         

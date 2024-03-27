@@ -16,17 +16,8 @@ return(
       Here you can find some of my projects and solutions developed
       </h2>
     </div>
-      <div className=' mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 '>
-      <div data-aos="fade-right">
-      <Soon/> 
-      </div>
-      <div data-aos="fade-left">
-      <Soon/> 
-      </div>
-      <div data-aos="fade-right">
-      <Soon/> 
-      </div>
-      <div data-aos="fade-left">
+      <div className=''>
+      <div data-aos="">
       <Soon/> 
       </div>
       </div>

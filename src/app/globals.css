@@ -94,4 +94,38 @@ body {
 }
 
 
+.glow-border::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: inherit;
+  border: 3px solid transparent;
+  animation: glow 5s infinite linear;
+}
+
+@keyframes glow {
+  0% {
+    border-color: blue;
+    filter: brightness(120%);
+  }
+  25% {
+    border-color: purple;
+    filter: brightness(130%) hue-rotate(90deg);
+  }
+  50% {
+    border-color: blue;
+    filter: brightness(120%) hue-rotate(180deg);
+  }
+  75% {
+    border-color: purple;
+    filter: brightness(130%) hue-rotate(270deg);
+  }
+  100% {
+    border-color: blue;
+    filter: brightness(120%);
+  }
+}
 
