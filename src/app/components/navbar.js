@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="bg-black bg-opacity-0 fixed w-full top-0 z-10">
       <div className="container mx-auto flex items-center justify-between">
-        <a href='#' onClick={scrollToTop}>
+        <a href='#' className='hidden md:block' onClick={scrollToTop}>
           <img src="img/clover.png" className="h-7 mt-3 w-auto ml-4" />
         </a>
         <div className="hidden md:flex space-x-4"> {/* Oculto em dispositivos menores que md (médio) */}
