@@ -33,7 +33,7 @@ export default function ModelViewer() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-21.gltf', //trocar imagem
+        'img/scene-22.gltf', //change image 
         (gltf) => {
           gltf.scene.traverse((child) => {
             if (child.isMesh) {
