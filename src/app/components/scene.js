@@ -47,7 +47,10 @@ export default function ModelViewer() {
           // Ajusta a posição da câmera para visualizar o modelo
           const maxDim = Math.max(size.x, size.y, size.z);
           const distance = maxDim / Math.tan((Math.PI / 180) * camera.fov / 2);
-          camera.position.set(center.x - (maxDim * 0.7), center.y, center.z + distance * 0.5); // Ajuste para posicionar à esquerda
+          const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+          const zoomFactor = isMobile ? 0.5 : 0.7; // Defina o fator de zoom com base no dispositivo
+          const mobileDistanceFactor = isMobile ? 1.5 : 0.5; // Fator de distância para dispositivos móveis
+          camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * mobileDistanceFactor);
           camera.lookAt(center);
 
           const controls = new OrbitControls(camera, renderer.domElement);
