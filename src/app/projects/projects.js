@@ -23,10 +23,16 @@ export default function ProjectsPage() {
               Here you can find some of my projects and solutions developed
             </h2>
           </div>
+          <div className='relative'>
           <div className=''>
             <ModelViewer />
           </div>
+          <div className='absolute inset-0 justify-center flex items-center '>
+            {/* <Soon /> */}
+          </div>
+        </div> 
         </div>
+        
       </div>
       <Footer />
     </section>
