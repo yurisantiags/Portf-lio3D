@@ -1,9 +1,7 @@
-'use client';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export default function ModelViewer() {
   const sceneRef = useRef();
@@ -14,8 +12,7 @@ export default function ModelViewer() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set(0, 0, 2); // Adjusted camera position
+      const camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 0.1, 1000);
       const renderer = new THREE.WebGLRenderer({ alpha: true });
       const width = window.innerWidth * 0.7;
       const height = window.innerHeight * 0.7;
@@ -33,40 +30,45 @@ export default function ModelViewer() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-22.gltf', //change image 
+        'img/scene-25.gltf',
         (gltf) => {
-          gltf.scene.traverse((child) => {
-            if (child.isMesh) {
-              child.material.flatShading = false;
-              child.castShadow = true;
-              child.receiveShadow = true;
-            }
-          });
+          const model = gltf.scene;
+          modelRef.current = model;
+          scene.add(model);
 
-          gltf.scene.scale.set(1.0, 1.0, 1.0);
-          // Adjust object position
-          gltf.scene.position.y = 0.01; // Move the object 0.5 units upwards
-          modelRef.current = gltf.scene;
-          scene.add(gltf.scene);
+          const box = new THREE.Box3().setFromObject(model);
+          const center = box.getCenter(new THREE.Vector3());
+          const size = box.getSize(new THREE.Vector3());
+
+          // Calcula o deslocamento necessário para centralizar o modelo na cena
+          const offset = new THREE.Vector3().subVectors(center, scene.position);
+          model.position.sub(offset); // Aplica o deslocamento para centralizar o modelo na cena
+
+          // Ajusta a posição da câmera para visualizar o modelo
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const distance = maxDim / Math.tan((Math.PI / 180) * camera.fov / 2);
+          camera.position.set(center.x - (maxDim * 0.7), center.y, center.z + distance * 0.5); // Ajuste para posicionar à esquerda
+          camera.lookAt(center);
 
           const controls = new OrbitControls(camera, renderer.domElement);
           controlsRef.current = controls;
-
-          // Set restrictions to only left/right rotation
-          controls.enableRotate = true;
+          controls.enableRotate = true; // Permitir apenas rotação
+          controls.enableZoom = false; // Desabilitar zoom
           controls.enablePan = false;
-          controls.minPolarAngle = Math.PI / 2; // Set minimum polar angle to limit downward rotation
-          controls.maxPolarAngle = Math.PI / 2; // Set maximum polar angle to limit upward rotation
+          controls.minPolarAngle = Math.PI / 2;
+          controls.maxPolarAngle = Math.PI / 2;
 
           renderer.render(scene, camera);
 
-          // Animate function
           const animate = () => {
-            controlsRef.current.update(); // Update controls
+            // Girar o modelo em torno do eixo Y
+            model.rotation.y += 0.02; // Reduzindo a velocidade de rotação
+
+            controlsRef.current.update();
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
           };
-          animate(); // Start animation loop
+          animate();
         },
         undefined,
         (error) => {
@@ -82,8 +84,6 @@ export default function ModelViewer() {
 
       window.addEventListener('resize', handleResize);
 
-      renderer.domElement.style.cursor = 'grab'; // Change cursor style
-
       return () => {
         window.removeEventListener('resize', handleResize);
         if (controlsRef.current) {
@@ -97,5 +97,10 @@ export default function ModelViewer() {
     }
   }, []);
 
-  return <div ref={sceneRef} />;
+  return (
+    <div>
+      <div ref={sceneRef} className='relative' style={{ width: '70vw', height: '70vh', overflow: 'hidden' }}>
+      </div>
+    </div>
+  );
 }
