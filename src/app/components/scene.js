@@ -49,7 +49,7 @@ export default function ModelViewer() {
           const distance = maxDim / Math.tan((Math.PI / 180) * camera.fov / 2);
           const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
           const zoomFactor = isMobile ? 0.5 : 0.7; // Defina o fator de zoom com base no dispositivo
-          const mobileDistanceFactor = isMobile ? 1.3 : 0.5; // Fator de distância para dispositivos móveis
+          const mobileDistanceFactor = isMobile ? 1.2 : 0.5; // Fator de distância para dispositivos móveis
           camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * mobileDistanceFactor);
           camera.lookAt(center);
 
