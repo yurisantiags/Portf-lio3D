@@ -20,7 +20,6 @@ export default function Home() {
     </div>
     <ProjectsPage/>
     <BackToTopButton/>
-    <ContactButton/>
 </main>
 
   )

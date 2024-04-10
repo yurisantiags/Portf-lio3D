@@ -8,37 +8,25 @@ import Footer from "../components/footer";
 import AlertMessage from "../components/contactAlert";
 import Building from "../components/building";
 import ContactTitle from "../components/contactsTitle";
+import ContactText from "../components/contactText";
+import ContactButton from "../components/contactButton";
+import ContactForm from "../components/contactForm";
+import LinkedinButton from "../components/LinkedinButton";
 
 export default function Contacts() {
   return (
-    // <section className="min-h-screen flex flex-col">
-    //   <Navbar />
-    //   <div className='relative pl-16 pt-20 flex-1'>
-    //     <ModelViewer />
-    //     <div className="absolute inset-y-0 left-0 flex items-center pb-52 md:pl-24">
-    //       <ContactTitle />
-    //     </div>
-       
-    //   </div>
-    //   <div className=" flex items-center justify-center">
-    //     <EmailBox />
-    //     </div>
-    //   <div className="flex mt-5 pb-24 items-center justify-center">
-    //     <GhButton />
-    //     <LkButton />
-    //   </div>
-    //   {/* <AlertMessage />    */}
-    //   <Footer />
-    // </section>
     <main>
-<div className='h-full w-full'>
-  <Navbar/>
-  <div className="flex min-h-screen flex-col items-center justify-between p-24">
-    {/* <AboutTxt/> */}
-    <Building/>
-  </div>
-</div>
+    <div className='h-full w-full'>
+      <Navbar/>
+      <div className="flex min-h-screen items-center justify-center">
+        <ContactForm/>
+      </div>
+      <ContactButton/>
+      <LinkedinButton/>
+    </div>
+    <Footer/>
 </main>
+   
   );
 }
 
