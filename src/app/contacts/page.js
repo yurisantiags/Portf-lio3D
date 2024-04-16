@@ -27,14 +27,16 @@ export default function Contacts() {
 //     <Footer/>
 // </main>
 <main>
-    <div className='h-full w-full'>
-      <Navbar/>
-      <div className="flex min-h-screen flex-col items-center justify-between p-24">
-        {/* <AboutTxt/> */}
-        <Building/>
-      </div>
-    </div>
+<div className='h-full w-full'>
+  <Navbar/>
+  <div className="flex min-h-screen flex-col items-center justify-between p-24">
+    {/* <AboutTxt/> */}
+    <Building/>
+  </div>
+</div>
 </main>
+
+
    
   );
 }

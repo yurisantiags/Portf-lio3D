@@ -21,8 +21,8 @@ export default function Footer(){
        
         <hr className='opacity-15'></hr>
        
-        <div className="md:justify-start md:flex gap-2 md:pr-5">
-        <div className=' text-xs md:text-sm md:pl-44 mt-3 justify-center flex  md:pr-96'>
+        <div className="md:justify-start md:flex gap-2">
+        <div className=' text-xs md:text-sm md:pl-48 mt-3 justify-center flex '>
         &copy; 2023 Developed by{' '}
          <a
           href="https://github.com/YuriSantiag" className='text-gray-400' 
@@ -33,7 +33,7 @@ export default function Footer(){
            @yurisantiag
         </a>
         </div>
-        <div className='justify-center flex items-center gap-4'>
+        <div className='justify-center md:ml-64 flex items-center gap-4'>
         <a href="https://www.linkedin.com/in/yuri-santiago/" target="_blank" className="bg-white bg-opacity-5 md:ml-96 mt-2 hover:bg-gray-400 hover:text-white text-gray-400 p-2 rounded-full transition duration-300">
         <FaLinkedin className="h-4 w-4" />
         </a>
