@@ -1,44 +1,50 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import Navbar from '../components/navbar'
-import Text from '../components/text'
+import Navbar from '../components/navbar';
+import Text from '../components/text';
 import ProjectsPage from '../projects/projects';
 import Projects from '../components/projectButton';
 import BackToTopButton from '../components/backButton';
 import ContactButton from '../components/contactButton';
-import gsap from "gsap"
+import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default function Home() {
   const projectsSectionRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [firstLoad, setFirstLoad] = useState(true);
 
   useEffect(() => {
-    const loadingTimeline = gsap.timeline();
-    
-    // Define a duração total da animação de carregamento em segundos
-    const durationInSeconds = 1;
-    // Define o intervalo de tempo entre cada atualização da barra de carregamento
-    const updateInterval = durationInSeconds / 100;
+    // Verifica se é a primeira carga
+    if (firstLoad) {
+      const loadingTimeline = gsap.timeline();
 
+      // Define a duração total da animação de carregamento em segundos
+      const durationInSeconds = 1;
+      // Define o intervalo de tempo entre cada atualização da barra de carregamento
+      const updateInterval = durationInSeconds / 100;
 
-    // Atualiza a porcentagem na tela a cada intervalo
-    for (let percent = 1; percent <= 100; percent++) {
-      loadingTimeline.to(".loading-percentage", { textContent: `${percent}%`, duration: updateInterval }, `+=${updateInterval}`);
+      // Atualiza a porcentagem na tela a cada intervalo
+      for (let percent = 1; percent <= 100; percent++) {
+        loadingTimeline.to(".loading-percentage", { textContent: `${percent}%`, duration: updateInterval }, `+=${updateInterval}`);
+      }
+
+      // Espera 1 segundo antes de esconder a tela de carregamento
+      loadingTimeline.to(".loading-screen", { opacity: 0, duration: 1, delay: 1 });
+
+      // Atualiza o estado isLoading para indicar que o carregamento terminou
+      loadingTimeline.call(() => setIsLoading(false));
+
+      // Remove a tela de carregamento após a animação
+      loadingTimeline.to(".loading-screen", { display: "none", duration: 0 });
+
+      // Executa a animação
+      loadingTimeline.play();
+
+      // Marca que a primeira carga ocorreu
+      setFirstLoad(false);
     }
-
-    // Espera 1 segundo antes de esconder a tela de carregamento
-    loadingTimeline.to(".loading-screen", { opacity: 0, duration: 1, delay: 1 });
-
-    // Atualiza o estado isLoading para indicar que o carregamento terminou
-    loadingTimeline.call(() => setIsLoading(false));
-
-    // Remove a tela de carregamento após a animação
-    loadingTimeline.to(".loading-screen", { display: "none", duration: 0 });
-
-    // Executa a animação
-    loadingTimeline.play();
-  }, []);
+  }, [firstLoad]);
 
   return (
     <main>
@@ -61,5 +67,6 @@ export default function Home() {
     </main>
   )
 }
+
 
 

@@ -5,6 +5,7 @@ import ModelViewer from '../components/scene';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Importe os estilos da AOS
 import React, {useEffect} from 'react';
+import Gallery from '../components/projects';
 
 export default function ProjectsPage() {
   useEffect(() => {
@@ -26,9 +27,12 @@ export default function ProjectsPage() {
           <div className='relative'>
           <div className=''>
             <ModelViewer />
+            {/* <Gallery/> */}
+            {/* <Soon /> */}
           </div>
           <div className='absolute inset-0 justify-center flex items-center '>
-            {/* <Soon /> */}
+           
+           
           </div>
         </div> 
         </div>

@@ -1,6 +1,7 @@
 import { FiPhone } from 'react-icons/fi'
 import { useState, useEffect } from 'react';
 
+
 export default function ContactButton() {
   const [isVisible, setIsVisible] = useState(true);
 
