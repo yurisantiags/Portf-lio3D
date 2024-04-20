@@ -5,7 +5,6 @@ import ModelViewer from '../components/scene';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Importe os estilos da AOS
 import React, {useEffect} from 'react';
-import Gallery from '../components/projects';
 
 export default function ProjectsPage() {
   useEffect(() => {
