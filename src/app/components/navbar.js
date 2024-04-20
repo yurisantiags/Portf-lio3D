@@ -29,7 +29,7 @@ export default function Navbar() {
         </div>
         <div className="md:hidden flex items-center"> {/* Visível apenas em dispositivos menores que md (médio) */}
           {/* Ícone do menu para dispositivos móveis */}
-          <button onClick={toggleMobileMenu} className="text-white hover:text-gray-300">
+          <button onClick={toggleMobileMenu} className="text-white pt-4 pr-3 hover:text-gray-300">
             {mobileMenuOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ export default function Navbar() {
       {/* Menu para dispositivos móveis */}
       <div className={`md:hidden fixed inset-0 bg-gray-200 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="container mx-auto flex flex-col items-center justify-center h-screen">
-          <button onClick={toggleMobileMenu} className="text-black hover:text-gray-400 absolute top-6 right-6">
+          <button onClick={toggleMobileMenu} className="text-black hover:text-gray-400 absolute top-4 right-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
