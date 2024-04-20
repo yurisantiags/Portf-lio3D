@@ -47,7 +47,7 @@ export default function Navbar() {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-8 w-8"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
@@ -65,7 +65,7 @@ export default function Navbar() {
       {/* Menu para dispositivos móveis */}
       <div className={`md:hidden fixed inset-0 bg-gray-200 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="container mx-auto flex flex-col items-center justify-center h-screen">
-          <button onClick={toggleMobileMenu} className="text-black hover:text-gray-400 absolute top-4 right-4">
+          <button onClick={toggleMobileMenu} className="text-black hover:text-gray-400 absolute top-6 right-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
