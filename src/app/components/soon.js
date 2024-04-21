@@ -8,10 +8,13 @@ export default function Soon(){
     AOS.init();
   }, [])
     return(
-        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="pt-32 mb-8 md:mb-32 flex rounded-lg  lg:max-w-5xl lg:w-full lg:mb-0 lg:text-left">
-      <a
+        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="justify-center items-center flex w-auto h-64 rounded-lg bg-white opacity-30">
+        <ing></ing>
+        <h1>oi</h1>
+        <div className="text-center transition-opacity opacity-0 hover:opacity-100 duration-200 absolute inset-0 justify-center rounded-lg  items-center flex h-64 bg-black">
+        <a
         href=""
-        className="group text-center pointer-events-none cursor-default rounded-lg bg-white bg-opacity-5 border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+        className=""
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -22,6 +25,8 @@ export default function Soon(){
         This field is intended for future projects
         </p>
       </a>
+        </div>
+     
     </div>
     )
 }

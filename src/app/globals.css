@@ -79,54 +79,20 @@ body {
 
 
 
-/* card */
-@keyframes rotateCard {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+  width: 7px; /* Largura da scrollbar */
+
 }
 
-.shiny-card {
-  animation: rotateCard 5s linear infinite;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+/* Estilizando o track (faixa onde a thumb se move) */
+::-webkit-scrollbar-track {
+  background: #9b9a9a; /* Cor de fundo do track */
 }
 
-
-.glow-border::before {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border-radius: inherit;
-  border: 3px solid transparent;
-  animation: glow 5s infinite linear;
+/* Estilizando a thumb (o "botão" da scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #083e12;/* Cor da thumb */
+  border-radius: 5px; /* Borda arredondada */
+  
 }
-
-@keyframes glow {
-  0% {
-    border-color: blue;
-    filter: brightness(120%);
-  }
-  25% {
-    border-color: purple;
-    filter: brightness(130%) hue-rotate(90deg);
-  }
-  50% {
-    border-color: blue;
-    filter: brightness(120%) hue-rotate(180deg);
-  }
-  75% {
-    border-color: purple;
-    filter: brightness(130%) hue-rotate(270deg);
-  }
-  100% {
-    border-color: blue;
-    filter: brightness(120%);
-  }
-}
-
