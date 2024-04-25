@@ -112,7 +112,7 @@ export default function ContactFormWithModel() {
     <div>
       {!showModel && (
         <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4 text-green-900">Contact me</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-black">Contact me</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-700"></label>
@@ -154,9 +154,9 @@ export default function ContactFormWithModel() {
               ></textarea>
             </div>
             <div className="flex justify-end"> {/* Adiciona classe flex e justify-end */}
-              <button type="submit" className="bg-green-900 hover:scale-105 text-white shadow-xl px-4 py-2 rounded-md">Submit</button>
+              <button type="submit" className="bg-black hover:scale-105 text-white shadow-xl px-4 py-2 rounded-md">Submit</button>
             </div>
-            {emailError && <p className="text-red-500 text-xs md:mt-2">Erro ao enviar o email. Tente novamente mais tarde.</p>}
+            {emailError && <p className="text-red-500 text-xs text-center md:mt-2">Error sending the e-mail. Try again later.</p>}
           </form>
         </div>
       )}

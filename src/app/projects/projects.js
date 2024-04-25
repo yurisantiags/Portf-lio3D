@@ -30,8 +30,6 @@ export default function ProjectsPage() {
             {/* <Soon /> */}
           </div>
           <div className='absolute inset-0 justify-center flex items-center '>
-           
-           
           </div>
         </div> 
         </div>

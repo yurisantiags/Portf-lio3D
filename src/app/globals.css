@@ -79,20 +79,4 @@ body {
 
 
 
-/* Estilizando a barra de rolagem */
-::-webkit-scrollbar {
-  width: 7px; /* Largura da scrollbar */
 
-}
-
-/* Estilizando o track (faixa onde a thumb se move) */
-::-webkit-scrollbar-track {
-  background: #9b9a9a; /* Cor de fundo do track */
-}
-
-/* Estilizando a thumb (o "botão" da scrollbar) */
-::-webkit-scrollbar-thumb {
-  background: #083e12;/* Cor da thumb */
-  border-radius: 5px; /* Borda arredondada */
-  
-}

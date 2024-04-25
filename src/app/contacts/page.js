@@ -24,7 +24,7 @@ export default function Contacts() {
       <ContactButton/>
       <LinkedinButton/>
     </div>
-    <Footer/>
+    {/* <Footer/> */}
 </main>
 
    
