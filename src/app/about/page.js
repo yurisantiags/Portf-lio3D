@@ -8,7 +8,7 @@ import ScrollTextComponent from '../components/skills';
 export default function About() {
   return (
     <main>
-      <Navbar />
+      <Navbar/>
       <div className="flex justify-center">
         {/* <div className="flex md:pl-24 md:pb-14">
           <Imagem src="" alt="me"/>
