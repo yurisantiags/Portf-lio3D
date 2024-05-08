@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { BsSend } from "react-icons/bs";
 
 export default function ContactFormWithModel() {
   const [showModel, setShowModel] = useState(false);
@@ -154,7 +155,7 @@ export default function ContactFormWithModel() {
               ></textarea>
             </div>
             <div className="flex justify-end"> {/* Adiciona classe flex e justify-end */}
-              <button type="submit" className="bg-black hover:scale-105 text-white shadow-xl px-4 py-2 rounded-md">Submit</button>
+              <button type="submit" className="bg-black hover:scale-105 text-white shadow-xl px-4 py-2 inline-flex rounded-md">Submit </button>
             </div>
             {emailError && <p className="text-red-500 text-xs text-center md:mt-2">Error sending the e-mail. Try again later.</p>}
           </form>

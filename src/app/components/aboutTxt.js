@@ -1,11 +1,55 @@
-export default function AboutTxt(){
-    return(
-        <div className="">
-        <h6 className="font-semibold text-lime-700 ">About Me</h6>
-            <h6 className="font-medium text-gray-500 text-opacity-55">
-            I am a freelance web developer specialized in bringing digital ideas to life. With over two years of experience, I have been focused on creating and optimizing a variety of websites, including institutional, corporate, and commercial ones. Additionally, I have a brief experience in cybersecurity. I utilize a range of technologies such as HTML, CSS, JavaScript, PHP, ReactJS, Blender, Figma, ThreeJs, Bootstrap, MySQL, TailwindJS, jQuery, and have prior experience with Java.
-As a self-taught individual, I have developed additional skills in design and 3D modeling, using tools like Blender, Threejs, Photoshop, and Figma. Through this journey of continuous learning, I have gained the ability to adapt quickly and seek innovative and high-quality web solutions, always prioritizing understanding the specific needs of each client.
-            </h6>
-        </div>
-    )
+'use client';
+import { useEffect } from 'react';
+
+export default function AboutTxt() {
+  useEffect(() => {
+    const heading = document.querySelector('.animated-heading');
+    const letters = heading.textContent.split('');
+    heading.textContent = '';
+    
+    letters.forEach(letter => {
+      const span = document.createElement('span');
+      span.textContent = letter;
+      span.className = 'animated-letter';
+      heading.appendChild(span);
+    });
+
+    heading.addEventListener('mouseover', () => {
+      const animatedLetters = document.querySelectorAll('.animated-letter');
+      animatedLetters.forEach((letter, index) => {
+        setTimeout(() => {
+          letter.style.transform = 'translateX(' + (index % 2 === 0 ? '-5px' : '5px') + ')';
+        }, index * 50);
+      });
+    });
+
+    heading.addEventListener('mouseout', () => {
+      const animatedLetters = document.querySelectorAll('.animated-letter');
+      animatedLetters.forEach(letter => {
+        letter.style.transform = 'translateX(0)';
+      });
+    });
+  }, []);
+
+  return (
+    <div className="flex justify-center items-center md:justify-start">
+      <div data-aos="fade-up" className="md:pl-20 text-center md:text-left">
+        <h2 className="font-semibold text-white text-2xl mb-4 animated-heading">About Me</h2>
+        <h6 className="font-normal text-sm md:text-base text-white">
+          <ul>
+            <li>• Professional Experience:</li>
+            <li>• 4 years experience.</li>
+            <li>• I have worked on projects that include institutional, corporate, and commercial websites.</li>
+            <li>• A brief experience in cybersecurity.</li>
+          </ul>
+          <ul>
+            <li>• Additional Skills:</li>
+            <li>• Design and 3D modeling.</li>
+            <li>• Studying Cloud Solutions in AWS</li>
+            <li>• I use tools like Blender, Threejs, Photoshop, and Figma for this purpose.</li>
+          </ul>
+        </h6>
+      </div>
+    </div>
+  );
 }

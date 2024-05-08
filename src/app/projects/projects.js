@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   }, []); // Certifique-se de usar uma dependência vazia para que seja chamada apenas uma vez
 
   return (
-    <section id='projects-section'>
+    <section id='projects-section' className=''>
       <div className='flex min-h-screen items-center justify-center p-24'>
         <div className='min-h-screen flex justify-center items-center flex-col'>
           <div className='mt-10 text-center'>
@@ -23,14 +23,12 @@ export default function ProjectsPage() {
               Here you can find some of my projects and solutions developed
             </h2>
           </div>
-          <div className='relative'>
-          <div className=''>
-            <ModelViewer />
+          <div className='relative grid md:grid-cols-3 gap-4'>
+            {/* <ModelViewer /> */}
             {/* <Gallery/> */}
-            {/* <Soon /> */}
-          </div>
-          <div className='absolute inset-0 justify-center flex items-center '>
-          </div>
+            <Soon />
+            <Soon />
+            <Soon />
         </div> 
         </div>
         

@@ -26,7 +26,7 @@ export default function ContactButton() {
     window.location.href = "mailto:yurisantiagx2@gmail.com";
   };
 
-  return (
+  return (  
     <>
       {isVisible && (
         <button

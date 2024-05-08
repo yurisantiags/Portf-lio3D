@@ -21,10 +21,10 @@ export default function Contacts() {
       <div className="flex min-h-screen items-center justify-center">
         <ContactForm/>
       </div>
-      <ContactButton/>
+      {/* <ContactButton/> */}
       <LinkedinButton/>
     </div>
-    {/* <Footer/> */}
+    <Footer/>
 </main>
 
    

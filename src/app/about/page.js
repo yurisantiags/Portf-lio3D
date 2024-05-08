@@ -3,20 +3,24 @@ import AboutTxt from '../components/aboutTxt';
 import Building from '../components/building';
 import Footer from '../components/footer';
 import Navbar from '../components/navbar'
+import ScrollTextComponent from '../components/skills';
 
 export default function About() {
   return (
-<main>
-    <div className='h-full w-full'>
-      <Navbar/>
-      <div className="flex min-h-screen justify-center p-24">
-      {/* <Imagem src="img/IMG_0797.HEIC" alt="me"/>
-        <AboutTxt/> */}
+    <main>
+      <Navbar />
+      <div className="flex justify-center">
+        {/* <div className="flex md:pl-24 md:pb-14">
+          <Imagem src="" alt="me"/>
+          <AboutTxt/>
+        </div>
+        <ScrollTextComponent/> */}
+        {/* <Tagreel/> */}
         <Building/>
       </div>
-    </div>
-    {/* <Footer/> */}
-</main>
-
-  )
+      {/* <Footer/> */}
+    </main>
+  );
 }
+
+// justcenter por flex-col

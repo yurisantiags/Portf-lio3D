@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import SwitchButton from './swith';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function Navbar() {
           <img src="img/clover.png" className="hidden h-7 mt-3 w-auto ml-4" />
         </a>
         <div className="hidden md:flex space-x-4"> {/* Oculto em dispositivos menores que md (médio) */}
+        {/* <SwitchButton/> */}
           <Link href="/home" className="text-white opacity-75 mt-5 text-sm hover:underline transition-all">Home</Link>
           <Link href="/about" className="text-white opacity-75 mt-5 text-sm hover:underline transition-all">About</Link>
           <Link href="/contacts" className="text-white opacity-75 mt-5 text-sm hover:underline transition-all">Contacts</Link>

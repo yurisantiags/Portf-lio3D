@@ -30,7 +30,7 @@ export default function LinkedinButton() {
       {isVisible && (
         <button
           onClick={openLinkedin}
-          className="fixed bottom-5 right-5 bg-white bg-opacity-5 hover:bg-gray-400 text-white font-medium p-2 rounded-full transition duration-300"
+          className="fixed bottom-5 left-5 bg-white bg-opacity-5 hover:bg-gray-400 text-white font-medium p-2 rounded-full transition duration-300"
           title="Linkedin"
         >
           <FiLinkedin className="h-5 w-5" />

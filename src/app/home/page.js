@@ -8,6 +8,8 @@ import BackToTopButton from '../components/backButton';
 import ContactButton from '../components/contactButton';
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import About from '../about/page';
+import Contacts from '../contacts/page';
 
 export default function Home() {
   const projectsSectionRef = useRef(null);
@@ -63,9 +65,13 @@ export default function Home() {
         </div>
       </div>
       <ProjectsPage />
+      {/* <About/>
+      <Contacts/> */}
+      
       <BackToTopButton />
       
     </main>
+    
   )
 }
 

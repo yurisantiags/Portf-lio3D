@@ -8,10 +8,8 @@ export default function Soon(){
     AOS.init();
   }, [])
     return(
-        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="justify-center items-center flex w-auto h-64 rounded-lg bg-white opacity-30">
-        <ing></ing>
-        <h1>oi</h1>
-        <div className="text-center transition-opacity opacity-0 hover:opacity-100 duration-200 absolute inset-0 justify-center rounded-lg  items-center flex h-64 bg-black">
+        <div data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="justify-center items-center flex w-96 h-64 mt-20 rounded-lg ">
+        <div className="text-center transition-opacity duration-200 absolute inset-0 justify-center rounded-lg  items-center flex h-64 bg-white bg-opacity-15 ">
         <a
         href=""
         className=""
