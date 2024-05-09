@@ -15,9 +15,9 @@ import LinkedinButton from "../components/LinkedinButton";
 
 export default function Contacts() {
   return (
-    <main>
+    <main id="contacts">
     <div className='h-full w-full'>
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className="flex min-h-screen items-center justify-center">
         <ContactForm/>
       </div>

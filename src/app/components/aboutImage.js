@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
-
+  
 function Imagem(props) {
   const isDesktop = useMediaQuery({ minWidth: 769 }); // Define a largura mínima para considerar como tela desktop
 

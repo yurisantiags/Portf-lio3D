@@ -37,16 +37,16 @@ export default function AboutTxt() {
         <h2 className="font-semibold text-white text-2xl mb-4 animated-heading">About Me</h2>
         <h6 className="font-normal text-sm md:text-base text-white">
           <ul>
-            <li>• Professional Experience:</li>
-            <li>• 4 years experience.</li>
-            <li>• I have worked on projects that include institutional, corporate, and commercial websites.</li>
-            <li>• A brief experience in cybersecurity.</li>
+            <li> Professional Experience:</li>
+            <li className='pt-2 pl-2'>• 4 years experience.</li>
+            <li className='pt-1 pl-2'>• I have worked on projects that include institutional, corporate, and commercial websites.</li>
+            <li className=' pt-1 pl-2 pb-2'>• A brief experience in cybersecurity.</li>
           </ul>
           <ul>
-            <li>• Additional Skills:</li>
-            <li>• Design and 3D modeling.</li>
-            <li>• Studying Cloud Solutions in AWS</li>
-            <li>• I use tools like Blender, Threejs, Photoshop, and Figma for this purpose.</li>
+            <li> Additional Skills:</li>
+            <li className='pt-2 pl-2'>• Design and 3D modeling.</li>
+            <li className='pt-1 pl-2'>• Studying Cloud Solutions in AWS</li>
+            <li className='pt-1 pl-2'>• I use tools like Blender, Threejs, Photoshop, and Figma for this purpose.</li>
           </ul>
         </h6>
       </div>

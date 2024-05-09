@@ -65,8 +65,8 @@ export default function Home() {
         </div>
       </div>
       <ProjectsPage />
-      {/* <About/>
-      <Contacts/> */}
+      <About/>
+      <Contacts/>
       
       <BackToTopButton />
       
