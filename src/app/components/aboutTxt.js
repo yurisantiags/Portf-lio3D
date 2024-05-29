@@ -14,7 +14,7 @@ export default function AboutTxt() {
       heading.appendChild(span);
     });
 
-    heading.addEventListener('mouseover', () => {
+    heading.addEventListener('mouseover', () => { 
       const animatedLetters = document.querySelectorAll('.animated-letter');
       animatedLetters.forEach((letter, index) => {
         setTimeout(() => {
@@ -44,6 +44,7 @@ export default function AboutTxt() {
           </ul>
           <ul>
             <li> Additional Skills:</li>
+            <li className='pt-2 pl-2'>• Hacker Rank - Software Engineer Certificate.</li>
             <li className='pt-2 pl-2'>• Design and 3D modeling.</li>
             <li className='pt-1 pl-2'>• Studying Cloud Solutions in AWS</li>
             <li className='pt-1 pl-2'>• I use tools like Blender, Threejs, Photoshop, and Figma for this purpose.</li>

@@ -1,27 +1,25 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { AnimationMixer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { BsSend } from "react-icons/bs";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 export default function ContactFormWithModel() {
   const [showModel, setShowModel] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [emailError, setEmailError] = useState(false); // Estado para controlar se houve um erro no envio do email
+  const [emailError, setEmailError] = useState(false);
   const sceneRef = useRef();
   const rendererRef = useRef();
   const modelRef = useRef();
   const controlsRef = useRef(null);
+  const mixerRef = useRef();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Simulação de envio de email
     try {
-      // Aqui você faria a requisição HTTP para enviar o email
-      // Se ocorrer um erro, você pode setar o estado 'emailError' para true
-      throw new Error('Erro ao enviar o email');
+      setShowModel(true);
     } catch (error) {
       console.error('Erro ao enviar o email:', error);
       setEmailError(true);
@@ -49,38 +47,52 @@ export default function ContactFormWithModel() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-2.glb',
+        'img/scene-30.gltf',
         (gltf) => {
           const model = gltf.scene;
           modelRef.current = model;
           scene.add(model);
 
+          // Create mixer for animations
+          mixerRef.current = new AnimationMixer(model);
+
+          // Play all animations
+          gltf.animations.forEach((clip) => {
+            mixerRef.current.clipAction(clip).play();
+          });
+
           const box = new THREE.Box3().setFromObject(model);
           const center = box.getCenter(new THREE.Vector3());
           const size = box.getSize(new THREE.Vector3());
 
-          // Calcula o deslocamento necessário para centralizar o modelo na cena
           const offset = new THREE.Vector3().subVectors(center, scene.position);
-          model.position.sub(offset); // Aplica o deslocamento para centralizar o modelo na cena
+          model.position.sub(offset);
 
-          // Ajusta a posição da câmera para visualizar o modelo
           const maxDim = Math.max(size.x, size.y, size.z);
           const distance = maxDim / Math.tan((Math.PI / 180) * camera.fov / 2);
           const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-          const zoomFactor = isMobile ? 0.5 : 0.7; // Defina o fator de zoom com base no dispositivo
-          const mobileDistanceFactor = isMobile ? 1 : 0.5; // Fator de distância para dispositivos móveis
+          const zoomFactor = isMobile ? 0.5 : 0.7;
+          const mobileDistanceFactor = isMobile ? 1 : 0.5;
           camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * mobileDistanceFactor);
           camera.lookAt(center);
 
           const controls = new OrbitControls(camera, renderer.domElement);
           controlsRef.current = controls;
-          controls.enableRotate = true; // Permitir apenas rotação
-          controls.enableZoom = false; // Desabilitar zoom
+          controls.enableRotate = true;
+          controls.enableZoom = false;
           controls.enablePan = false;
           controls.minPolarAngle = Math.PI / 2;
           controls.maxPolarAngle = Math.PI / 2;
 
-          renderer.render(scene, camera);
+          const animate = () => {
+            if (mixerRef.current) {
+              mixerRef.current.update(0.016);
+            }
+            controls.update();
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+          };
+          animate();
         },
         undefined,
         (error) => {
@@ -154,7 +166,7 @@ export default function ContactFormWithModel() {
                 className="w-full px-4 py-4 border rounded-md focus:outline-none focus:border-gray-500"
               ></textarea>
             </div>
-            <div className="flex justify-end"> {/* Adiciona classe flex e justify-end */}
+            <div className="flex justify-end">
               <button type="submit" className="bg-black hover:scale-105 text-white shadow-xl px-4 py-2 inline-flex rounded-md">Submit </button>
             </div>
             {emailError && <p className="text-red-500 text-xs text-center md:mt-2">Error sending the e-mail. Try again later.</p>}

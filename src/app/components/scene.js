@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { AnimationMixer } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 export default function ModelViewer() {
   const sceneRef = useRef();
@@ -30,7 +30,7 @@ export default function ModelViewer() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-29.gltf',
+        'img/scene-30.gltf',
         (gltf) => {
           const model = gltf.scene;
           modelRef.current = model;
@@ -50,7 +50,7 @@ export default function ModelViewer() {
           const size = box.getSize(new THREE.Vector3());
           const maxDim = Math.max(size.x, size.y, size.z);
           const distance = maxDim / Math.tan((Math.PI / 180) * camera.fov / 2);
-          const zoomFactor = 1 ; // Reducing the zoom
+          const zoomFactor = -7 ; // Reducing the zoom
           camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * 0.7); // Adjusting camera position
           camera.lookAt(center);
 
