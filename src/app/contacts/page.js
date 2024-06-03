@@ -9,7 +9,7 @@ export default function Contacts() {
     <div className='h-full w-full'>
       {/* <Navbar/> */}
       <div className="flex min-h-screen items-center justify-center">
-        {/* <ContactFormWithModel/> */}
+      {/* <ContactFormWithModel/> */}
         <ModelViewer/>
       </div>
       {/* <ContactButton/> */}
@@ -18,7 +18,6 @@ export default function Contacts() {
     <Footer/>
 </main>
 
-   
   );
 }
 

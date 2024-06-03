@@ -8,6 +8,7 @@ export default function ModelViewer() {
   const rendererRef = useRef();
   const modelRef = useRef();
   const mixerRef = useRef();
+  const clock = new THREE.Clock();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -41,7 +42,10 @@ export default function ModelViewer() {
 
           // Play all animations
           gltf.animations.forEach((clip) => {
-            mixerRef.current.clipAction(clip).play();
+            const action = mixerRef.current.clipAction(clip);
+            action.setLoop(THREE.LoopOnce, 1);  // Set the animation to loop once
+            action.clampWhenFinished = true;  // Stop the animation at the last frame
+            action.play();
           });
 
           // Adjust camera position to view the model
@@ -50,22 +54,35 @@ export default function ModelViewer() {
           const size = box.getSize(new THREE.Vector3());
           const maxDim = Math.max(size.x, size.y, size.z);
           const distance = maxDim / Math.tan((Math.PI / 180) * camera.fov / 2);
-          const zoomFactor = -7 ; // Reducing the zoom
+          const zoomFactor = -7;  // Reducing the zoom
           camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * 0.7); // Adjusting camera position
           camera.lookAt(center);
 
           renderer.render(scene, camera);
 
           const animate = () => {
+            const delta = clock.getDelta();
             // Update mixer for animations
             if (mixerRef.current) {
-              mixerRef.current.update(0.016); // Pass delta time
+              mixerRef.current.update(delta); // Pass delta time
             }
 
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
           };
           animate();
+
+          // Set a timeout to remove the model after the animation duration
+          const maxDuration = Math.max(...gltf.animations.map(clip => clip.duration));
+          setTimeout(() => {
+            scene.remove(model);
+            model.traverse(child => {
+              if (child.isMesh) {
+                child.geometry.dispose();
+                child.material.dispose();
+              }
+            });
+          }, maxDuration * 1000);  // Convert duration to milliseconds
         },
         undefined,
         (error) => {
