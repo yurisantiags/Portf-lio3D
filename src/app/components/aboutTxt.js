@@ -38,16 +38,14 @@ export default function AboutTxt() {
         <h6 className="font-normal text-sm md:text-base text-white">
           <ul>
             <li> Professional Experience:</li>
-            <li className='pt-2 pl-2'>• 4 years experience.</li>
-            <li className='pt-1 pl-2'>• I have worked on projects that include institutional, corporate, and commercial websites.</li>
-            <li className=' pt-1 pl-2 pb-2'>• A brief experience in cybersecurity.</li>
+            <li className='pt-1 pl-2'>• I have worked on Front-end projects including institutional, corporate and commercial websites.</li>
+            <li className=' pt-1 pl-2 '>• A brief experience in cybersecurity.</li>
+            <li className='pb-2 pl-2'>• Design and 3D modeling.</li>
           </ul>
           <ul>
             <li> Additional Skills:</li>
-            <li className='pt-2 pl-2'>• Hacker Rank - Software Engineer Certificate.</li>
-            <li className='pt-2 pl-2'>• Design and 3D modeling.</li>
             <li className='pt-1 pl-2'>• Studying Cloud Solutions in AWS</li>
-            <li className='pt-1 pl-2'>• I use tools like Blender, Threejs, Photoshop, and Figma for this purpose.</li>
+            <li className='pt-1 pl-2'>• For design and 3D modeling I use tools like Blender, Threejs, Photoshop and Figma.</li>
           </ul>
         </h6>
       </div>

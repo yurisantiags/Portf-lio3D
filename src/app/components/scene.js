@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { AnimationMixer } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -9,6 +9,7 @@ export default function ModelViewer() {
   const modelRef = useRef();
   const mixerRef = useRef();
   const clock = new THREE.Clock();
+  const [emailSent, setEmailSent] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -75,6 +76,7 @@ export default function ModelViewer() {
           // Set a timeout to remove the model after the animation duration
           const maxDuration = Math.max(...gltf.animations.map(clip => clip.duration));
           setTimeout(() => {
+            setEmailSent(true);
             scene.remove(model);
             model.traverse(child => {
               if (child.isMesh) {
@@ -111,6 +113,11 @@ export default function ModelViewer() {
   return (
     <div>
       <div ref={sceneRef} className='relative' style={{ width: '70vw', height: '70vh', overflow: 'hidden' }}>
+        {emailSent && (
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4  border-2 border-white border-opacity-55 rounded-md">
+            <p className="text-lg text-white font-bold">Email sent!</p>
+          </div>
+        )}
       </div>
     </div>
   );
