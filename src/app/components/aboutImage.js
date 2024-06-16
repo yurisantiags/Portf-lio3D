@@ -1,10 +1,17 @@
-'use client';
+'use client'; // Certifique-se de usar 'use client' aqui
+
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 function Imagem(props) {
   const isDesktop = useMediaQuery({ minWidth: 769 }); // Define a largura mínima para considerar como tela desktop
+  const [showImage, setShowImage] = useState(false);
 
-  if (!isDesktop) {
+  useEffect(() => {
+    setShowImage(isDesktop);
+  }, [isDesktop]);
+
+  if (!showImage) {
     return null; // Retorna null se não estiver em uma tela desktop
   }
 
