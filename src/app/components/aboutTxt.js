@@ -39,7 +39,7 @@ export default function AboutTxt() {
           <ul>
             <li> Professional Experience:</li>
             <li className='pt-1 pl-2'>• I have worked on Front-end projects including institutional, corporate and commercial websites.</li>
-            <li className=' pt-1 pl-2 '>• A brief experience in cybersecurity.</li>
+            <li className=' pt-1 pl-2 '>• A brief experience in cybersecurity (I am part of the IDCIBER.ORG public committee).</li>
             <li className='pb-2 pl-2'>• Design and 3D modeling.</li>
           </ul>
           <ul>
