@@ -54,7 +54,7 @@ export default function Navbar() {
         </div>
       </div>
       <div
-        className={`md:hidden fixed inset-0 bg-gray-200 transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 bg-white transition-opacity duration-300 ${
           mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
