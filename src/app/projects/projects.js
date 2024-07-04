@@ -1,7 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import Navbar from '../components/navbar';
 import Soon from '../components/soon';
 
 export default function ProjectsPage() {
@@ -10,8 +9,8 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <section id='projects-section' className='h-screen flex flex-col justify-center items-center'>
-      <Navbar />
+    <section id='projects-section' className='h-screen mt-72 flex flex-col justify-center items-center'>
+      {/* <Navbar /> */}
       <div className='flex justify-center items-center flex-col'>
         <div className=' mt-16 text-center'>
           <h3 data-aos="fade-up" className='text-gray-500 text-sm font-semibold text-uppercase'>
