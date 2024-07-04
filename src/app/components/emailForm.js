@@ -1,11 +1,10 @@
-import React from 'react';
 
 export default function EmailForm() {
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-md mx-auto">
         <form>
-          <label className="block mb-2 text-white md:text-sm text-xs opacity-75 transition-all" htmlFor="email">
+          <label className="block mb-2 text-gray-900 md:text-sm text-xs opacity-75 transition-all" htmlFor="email">
             Send me an e-mail:
           </label>
           <input

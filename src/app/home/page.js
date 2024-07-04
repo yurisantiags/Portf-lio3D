@@ -1,15 +1,13 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import Navbar from '../components/navbar';
-import Text from '../components/text';
-import ProjectsPage from '../projects/projects';
-import Projects from '../components/projectButton';
-import BackToTopButton from '../components/backButton';
-import ContactButton from '../components/contactButton';
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useRef } from 'react';
 import About from '../about/page';
+import LinkedinButton from '../components/LinkedinButton';
+import BackToTopButton from '../components/backButton';
+import Navbar from '../components/navbar';
+import Projects from '../components/projectButton';
+import Text from '../components/text';
 import Contacts from '../contacts/page';
+import ProjectsPage from '../projects/projects';
 
 export default function Home() {
   const projectsSectionRef = useRef(null);
@@ -67,7 +65,7 @@ export default function Home() {
       <ProjectsPage />
       <About/>
       <Contacts/>
-      
+      <LinkedinButton/>
       <BackToTopButton />
       
     </main>

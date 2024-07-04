@@ -10,21 +10,43 @@ export default function ContactFormWithModel() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState(false);
-  const sceneRef = useRef();
+  const sceneRef = useRef();  
   const rendererRef = useRef();
   const modelRef = useRef();
   const controlsRef = useRef(null);
   const mixerRef = useRef();
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     setShowModel(true);
+  //   } catch (error) {
+  //     console.error('Erro ao enviar o email:', error);
+  //     setEmailError(true);
+  //   }
+  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      setShowModel(true);
+        const response = await fetch('http://localhost:8081/api/contact/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, message })
+        });
+        
+        if (response.ok) {
+            setShowModel(true);
+        } else {
+            setEmailError(true);
+        }
     } catch (error) {
-      console.error('Erro ao enviar o email:', error);
-      setEmailError(true);
+        console.error('Tá dando erro no bagulho:', error);
+        setEmailError(true);
     }
-  };
+};
+
 
   useEffect(() => {
     if (typeof window !== 'undefined' && showModel) {
@@ -124,7 +146,7 @@ export default function ContactFormWithModel() {
   return (
     <div>
       {!showModel && (
-        <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-lg shadow-md">
+        <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold mb-4 text-black">Contact me</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -167,7 +189,7 @@ export default function ContactFormWithModel() {
               ></textarea>
             </div>
             <div className="flex justify-end">
-              <button type="submit" className="bg-black hover:scale-105 text-white shadow-xl px-4 py-2 inline-flex rounded-md">Submit </button>
+              <button type="submit" className="bg-black hover:opacity-80 text-white shadow-xl px-4 py-2 inline-flex rounded-md">Submit </button>
             </div>
             {emailError && <p className="text-red-500 text-xs text-center md:mt-2">Error sending the e-mail. Try again later.</p>}
           </form>

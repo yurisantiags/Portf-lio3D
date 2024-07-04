@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import { FiLinkedin } from 'react-icons/fi';
-import { useState, useEffect } from 'react';
 
 export default function LinkedinButton() {
   const [isVisible, setIsVisible] = useState(true);
@@ -30,7 +30,7 @@ export default function LinkedinButton() {
       {isVisible && (
         <button
           onClick={openLinkedin}
-          className="fixed bottom-5 left-5 bg-white bg-opacity-5 hover:bg-gray-400 text-white font-medium p-2 rounded-full transition duration-300"
+          className="fixed bottom-5 left-5 bg-black bg-opacity-5 text-black hover:bg-gray-300 font-medium p-2 rounded-full transition duration-300"
           title="Linkedin"
         >
           <FiLinkedin className="h-5 w-5" />

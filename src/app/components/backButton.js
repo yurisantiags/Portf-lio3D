@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function BackToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +30,7 @@ export default function BackToTopButton() {
       onClick={scrollToTop}
       className={`${
         isVisible ? 'fixed bottom-5 right-5' : 'hidden'
-      } bg-white bg-opacity-5 text-white font-bold p-2 rounded-full transition duration-300`}
+      } bg-black bg-opacity-5 text-gray-600 font-bold p-2 rounded-full transition duration-300`}
       title="Voltar ao Topo"
     >
       <svg

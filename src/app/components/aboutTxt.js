@@ -34,8 +34,8 @@ export default function AboutTxt() {
   return (
     <div className="flex justify-center items-center md:justify-start">
       <div data-aos="fade-up" className="md:pl-20 text-center md:text-left">
-        <h2 className="font-semibold text-white text-2xl mb-4 animated-heading">About Me</h2>
-        <h6 className="font-normal text-sm md:text-base text-white">
+        <h2 className="font-semibold text-black text-2xl mb-4 animated-heading">About Me</h2>
+        <h6 className="font-normal text-sm md:text-base text-gray-600">
           <ul>
             <li> Professional Experience:</li>
             <li className='pt-1 pl-2'>• I have worked on Front-end projects including institutional, corporate and commercial websites.</li>
@@ -46,6 +46,7 @@ export default function AboutTxt() {
             <li> Additional Skills:</li>
             <li className='pt-1 pl-2'>• Studying Cloud Solutions in AWS</li>
             <li className='pt-1 pl-2'>• For design and 3D modeling I use tools like Blender, Threejs, Photoshop and Figma.</li>
+            <li className='pt-1 pl-2'>• Java Back-End</li>
           </ul>
         </h6>
       </div>

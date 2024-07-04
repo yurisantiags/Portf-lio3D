@@ -13,7 +13,7 @@ export default function Projects({ projectsSectionRef }) {
 
   return (
     <button
-      className="text-white animate-bounce flex items-center rounded-lg px-14 hover:scale-105 duration-500 opacity-75"
+      className="text-black animate-bounce flex items-center rounded-lg px-14 hover:scale-105 duration-500 opacity-75"
       onClick={scrollToProjects}
     >
       Projects <FaChevronDown className="ml-2" />
