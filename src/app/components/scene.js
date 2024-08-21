@@ -32,7 +32,7 @@ export default function ModelViewer() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-30.gltf',
+        'img/scene-32.gltf',
         (gltf) => {
           const model = gltf.scene;
           modelRef.current = model;

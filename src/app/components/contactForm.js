@@ -16,37 +16,17 @@ export default function ContactFormWithModel() {
   const controlsRef = useRef(null);
   const mixerRef = useRef();
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     setShowModel(true);
-  //   } catch (error) {
-  //     console.error('Erro ao enviar o email:', error);
-  //     setEmailError(true);
-  //   }
-  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        const response = await fetch('http://localhost:8081/api/contact/send', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name, email, message })
-        });
-        
-        if (response.ok) {
-            setShowModel(true);
-        } else {
-            setEmailError(true);
-        }
+        // Simular o envio do email
+        console.log('Simulando o envio do email...');
+        setShowModel(true);
     } catch (error) {
-        console.error('Tá dando erro no bagulho:', error);
+        console.error('Erro ao simular o envio do email:', error);
         setEmailError(true);
     }
-};
-
+  };
 
   useEffect(() => {
     if (typeof window !== 'undefined' && showModel) {
@@ -69,7 +49,7 @@ export default function ContactFormWithModel() {
 
       const loader = new GLTFLoader();
       loader.load(
-        'img/scene-30.gltf',
+        'img/scene-34.gltf',
         (gltf) => {
           const model = gltf.scene;
           modelRef.current = model;
@@ -187,6 +167,9 @@ export default function ContactFormWithModel() {
                 required
                 className="w-full px-4 py-4 border rounded-md focus:outline-none focus:border-gray-500"
               ></textarea>
+            </div>
+            <div className="text-red-500 text-xs text-center mb-4">
+              *Backend ainda em desenvolvimento, mas clique em submit para ver a animação 3D*
             </div>
             <div className="flex justify-end">
               <button type="submit" className="bg-black hover:opacity-80 text-white shadow-xl px-4 py-2 inline-flex rounded-md">Submit </button>
