@@ -7,7 +7,7 @@ import Navbar from '../components/navbar';
 import Projects from '../components/projectButton';
 import Text from '../components/text';
 import Contacts from '../contacts/page';
-import ProjectsPage from '../projects/projects';
+import ProjectsPage from '../projects/page';
 
 export default function Home() {
   const projectsSectionRef = useRef(null);
