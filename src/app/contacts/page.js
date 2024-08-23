@@ -1,4 +1,4 @@
-'use client';
+
 import LinkedinButton from "../components/LinkedinButton";
 import ContactFormWithModel from "../components/contactForm";
 import Footer from "../components/footer";
