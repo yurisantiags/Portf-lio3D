@@ -1,3 +1,4 @@
+'use client '
 import Imagem from '../components/aboutImage';
 import AboutTxt from '../components/aboutTxt';
 
