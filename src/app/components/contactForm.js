@@ -1,3 +1,4 @@
+'use client '
 import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
