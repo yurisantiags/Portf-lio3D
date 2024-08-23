@@ -35,20 +35,23 @@ export default function AboutTxt() {
     <div className="flex justify-center items-center md:justify-start">
       <div data-aos="fade-up" className="md:pl-20 text-center md:text-left">
         <h2 className="font-semibold text-black text-2xl mb-4 animated-heading">About Me</h2>
-        <h6 className="font-normal text-sm md:text-base text-gray-600">
-          <ul>
-            <li> Professional Experience:</li>
-            <li className='pt-1 pl-2'>• I have worked on Front-end projects including institutional, corporate and commercial websites.</li>
-            <li className=' pl-2'>• Design and 3D modeling.</li>
-            <li className='pb-2 pl-2'>• Java Back-End</li>
+        <div className="mt-4">
+          <h4 className="font-semibold text-lg mt-4">Expertise/Skills:</h4>
+          <ul className="list-disc pl-5">
+            <li>Front-end: Proficient in Bootstrap, Tailwind, HTML, CSS, SASS, JavaScript, PHP, Next.js, and React.</li>
+            <li>Design: Comprehensive experience in designing and implementing complete websites, including 3D modeling and animations (Three.js).</li>
+            <li>Design Tools: Figma, Photoshop, Canva, and Blender.</li>
+            <li>Back-end Integration: Experience with MySQL, Java, and API development.</li>
+            <li>Cyber Security: Knowledge in vulnerability analysis and data protection using Python.</li>
           </ul>
-          <ul>
-            <li> Additional Skills:</li>
-            <li className='pt-1 pl-2'>• Studying Cloud Solutions in AWS</li>
-            <li className='pt-1 pl-2'>• For design and 3D modeling I use tools like Blender, Threejs, Photoshop and Figma.</li>
-            <li className=' pt-1 pl-2 '>• A brief experience in cybersecurity (I am part of the IDCIBER.ORG public committee).</li>
+          <h4 className="font-semibold text-lg mt-4">Experience:</h4>
+          <ul className="list-disc pl-5">
+            <li>Development and maintenance of corporate websites.</li>
+            <li>Design and development of front-end interfaces.</li>
+            <li>Creation of 3D models and advanced visual elements.</li>
+            <li >Version control using Git and Git Flow.</li>
           </ul>
-        </h6>
+        </div>
       </div>
     </div>
   );
