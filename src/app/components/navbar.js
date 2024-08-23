@@ -31,8 +31,8 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-50 bg-opacity-10 fixed w-full top-0 z-10">
       <div className="container mx-auto flex items-center justify-between">
-        <a href="#" className="" onClick={scrollToTop}>
-          <img src="img/Design-3.png" className=" h-10 mt-4 w-auto ml-4" />
+        <a href="#" className="pointer-events-none" /*onClick={scrollToTop}*/>
+          {/* <img src="img/Design-3.png" className=" h-10 mt-4 w-auto ml-4" /> */}
         </a>
         <div className="hidden md:flex space-x-4">
           <button className="text-black opacity-75 text-sm mt-3 hover:underline transition-all" onClick={scrollToTop}>
