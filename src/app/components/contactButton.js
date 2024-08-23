@@ -1,5 +1,6 @@
-import { FiPhone } from 'react-icons/fi'
-import { useState, useEffect } from 'react';
+'use client';
+import { useEffect, useState } from 'react';
+import { FiPhone } from 'react-icons/fi';
 
 
 export default function ContactButton() {

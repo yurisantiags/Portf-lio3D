@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+'use client';
+import { useState } from 'react';
 
 const SwitchButton = () => {
   const [isActive, setIsActive] = useState(false);
