@@ -43,13 +43,13 @@ export default function AboutTxt() {
             <li>Design Tools: Figma, Photoshop, Canva, and Blender.</li>
             <li>Back-end Integration: Experience with MySQL, Java, and API development.</li>
             <li>Cyber Security: Knowledge in vulnerability analysis and data protection using Python.</li>
+            <li >Version control using Git and Git Flow.</li>
           </ul>
           <h4 className="font-semibold text-lg mt-4">Experience:</h4>
           <ul className=" pl-5">
             <li>Development and maintenance of corporate websites.</li>
             <li>Design and development of front-end interfaces.</li>
             <li>Creation of 3D models and advanced visual elements.</li>
-            <li >Version control using Git and Git Flow.</li>
           </ul>
         </div>
       </div>
