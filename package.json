@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@lordicon/react": "^1.6.0",
     "@react-three/drei": "^9.99.7",
     "aos": "^2.3.4",

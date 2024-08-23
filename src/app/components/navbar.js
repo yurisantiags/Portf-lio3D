@@ -13,12 +13,18 @@ export default function Navbar() {
       top: 0,
       behavior: 'smooth', // Adiciona rolagem suave
     });
+    if (mobileMenuOpen) {
+      toggleMobileMenu(); // Fecha o menu móvel
+    }
   };
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' }); // Adiciona rolagem suave
+      if (mobileMenuOpen) {
+        toggleMobileMenu(); // Fecha o menu móvel
+      }
     }
   };
 

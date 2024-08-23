@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { AnimationMixer } from 'three';
@@ -10,23 +11,50 @@ export default function ContactFormWithModel() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState(false);
+  const [animationDone, setAnimationDone] = useState(false);
   const sceneRef = useRef();  
   const rendererRef = useRef();
   const modelRef = useRef();
   const controlsRef = useRef(null);
   const mixerRef = useRef();
+  const audioRef = useRef();
 
   const handleSubmit = async (event) => {
+
     event.preventDefault();
+
+    const templateParams = {
+      from_name: name, 
+      message: message, 
+      email: email
+    }
+
+    emailjs.send("service_r48ktji", "template_rbveamh", templateParams, "iTiSvmGXiBnQjSP2O")
+    .then((response) => {
+      console.log("Email enviado", response.status, response.text)
+    })
     try {
-        // Simular o envio do email
-        console.log('Simulando o envio do email...');
-        setShowModel(true);
+      setShowModel(true);
     } catch (error) {
-        console.error('Erro ao simular o envio do email:', error);
-        setEmailError(true);
+      console.error('Erro', error);
+      setEmailError(true);
     }
   };
+
+  // function sendemail(e){
+  //   e.preventDefault();
+
+  //   const templateParams = {
+  //     from_name: name, 
+  //     message: message, 
+  //     email: email
+  //   }
+
+  //   emailjs.send("service_r48ktji", "template_rbveamh", templateParams, "iTiSvmGXiBnQjSP2O")
+  //   .then((response) => {
+  //     console.log("Email enviado", response.status, response.text)
+  //   })
+  // }
 
   useEffect(() => {
     if (typeof window !== 'undefined' && showModel) {
@@ -80,21 +108,39 @@ export default function ContactFormWithModel() {
 
           const controls = new OrbitControls(camera, renderer.domElement);
           controlsRef.current = controls;
-          controls.enableRotate = true;
-          controls.enableZoom = false;
-          controls.enablePan = false;
+          controls.enableRotate = false;  // Desabilita a rotação
+          controls.enableZoom = false;    // Desabilita o zoom
+          controls.enablePan = false;     // Desabilita o pan
           controls.minPolarAngle = Math.PI / 2;
           controls.maxPolarAngle = Math.PI / 2;
 
+          let animationCompleted = false;
           const animate = () => {
             if (mixerRef.current) {
               mixerRef.current.update(0.016);
             }
             controls.update();
             renderer.render(scene, camera);
-            requestAnimationFrame(animate);
+            if (!animationCompleted) {
+              requestAnimationFrame(animate);
+            }
           };
           animate();
+
+          // Inicializa e toca o som de envio de avião
+          audioRef.current = new Audio('img/email.mp3');
+          audioRef.current.play();
+
+          // Delay to mark animation as done and show the message
+          setTimeout(() => {
+            setAnimationDone(true);
+            setShowModel(false);  // Hide model after animation
+            setName('');
+            setEmail('');
+            setMessage('');
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0; // Reseta o tempo de reprodução do áudio
+          }, 5000); // Ajuste o tempo conforme necessário para o comprimento da animação
         },
         undefined,
         (error) => {
@@ -119,13 +165,17 @@ export default function ContactFormWithModel() {
           sceneRef.current.removeChild(rendererRef.current.domElement);
         }
         rendererRef.current.dispose();
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+        }
       };
     }
   }, [showModel]);
 
   return (
     <div>
-      {!showModel && (
+      {!animationDone && !showModel && (
         <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold mb-4 text-black">Contact me</h2>
           <form onSubmit={handleSubmit}>
@@ -168,17 +218,23 @@ export default function ContactFormWithModel() {
                 className="w-full px-4 py-4 border rounded-md focus:outline-none focus:border-gray-500"
               ></textarea>
             </div>
-            <div className="text-red-500 text-xs text-center mb-4">
+            {/* <div className="text-red-500 text-xs text-center mb-4">
               *Backend ainda em desenvolvimento, mas clique em submit para ver a animação 3D*
-            </div>
+            </div> */}
             <div className="flex justify-end">
-              <button type="submit" className="bg-black hover:opacity-80 text-white shadow-xl px-4 py-2 inline-flex rounded-md">Submit </button>
+              <button type="submit" className="bg-black hover:opacity-80 text-white shadow-xl px-4 py-2 inline-flex rounded-md">Submit</button>
             </div>
             {emailError && <p className="text-red-500 text-xs text-center md:mt-2">Error sending the e-mail. Try again later.</p>}
           </form>
         </div>
       )}
-      {showModel && (
+      {animationDone && !showModel && (
+        <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-lg shadow-lg text-center">
+          <h2 className="text-2xl font-semibold mb-4 text-black">Email Sent</h2>
+          <p className="text-gray-700">Thank you for your submission!</p>
+        </div>
+      )}
+      {showModel && !animationDone && (
         <div ref={sceneRef} className='relative' style={{ width: '70vw', height: '70vh', overflow: 'hidden' }}>
         </div>
       )}
