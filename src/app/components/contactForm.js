@@ -42,20 +42,6 @@ export default function ContactFormWithModel() {
     }
   };
 
-  // function sendemail(e){
-  //   e.preventDefault();
-
-  //   const templateParams = {
-  //     from_name: name, 
-  //     message: message, 
-  //     email: email
-  //   }
-
-  //   emailjs.send("service_r48ktji", "template_rbveamh", templateParams, "iTiSvmGXiBnQjSP2O")
-  //   .then((response) => {
-  //     console.log("Email enviado", response.status, response.text)
-  //   })
-  // }
 
   useEffect(() => {
     if (typeof window !== 'undefined' && showModel) {
@@ -84,10 +70,8 @@ export default function ContactFormWithModel() {
           modelRef.current = model;
           scene.add(model);
 
-          // Create mixer for animations
           mixerRef.current = new AnimationMixer(model);
 
-          // Play all animations
           gltf.animations.forEach((clip) => {
             mixerRef.current.clipAction(clip).play();
           });
@@ -109,9 +93,9 @@ export default function ContactFormWithModel() {
 
           const controls = new OrbitControls(camera, renderer.domElement);
           controlsRef.current = controls;
-          controls.enableRotate = false;  // Desabilita a rotação
-          controls.enableZoom = false;    // Desabilita o zoom
-          controls.enablePan = false;     // Desabilita o pan
+          controls.enableRotate = false;  
+          controls.enableZoom = false;    
+          controls.enablePan = false;     
           controls.minPolarAngle = Math.PI / 2;
           controls.maxPolarAngle = Math.PI / 2;
 
@@ -128,20 +112,20 @@ export default function ContactFormWithModel() {
           };
           animate();
 
-          // Inicializa e toca o som de envio de avião
+  
           audioRef.current = new Audio('img/email.mp3');
           audioRef.current.play();
 
-          // Delay to mark animation as done and show the message
+       
           setTimeout(() => {
             setAnimationDone(true);
-            setShowModel(false);  // Hide model after animation
+            setShowModel(false);  
             setName('');
             setEmail('');
             setMessage('');
             audioRef.current.pause();
-            audioRef.current.currentTime = 0; // Reseta o tempo de reprodução do áudio
-          }, 5000); // Ajuste o tempo conforme necessário para o comprimento da animação
+            audioRef.current.currentTime = 0; 
+          }, 5000);
         },
         undefined,
         (error) => {

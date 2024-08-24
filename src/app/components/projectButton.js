@@ -1,7 +1,5 @@
-// Importações...
 'use client';
 import { FaChevronDown } from 'react-icons/fa';
-//import { FaLinkedin } from 'react-icons/fa';
 
 export default function Projects({ projectsSectionRef }) {
   const scrollToProjects = () => {

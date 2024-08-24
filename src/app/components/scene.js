@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { AnimationMixer } from 'three';
@@ -41,31 +42,31 @@ export default function ModelViewer() {
           // Create mixer for animations
           mixerRef.current = new AnimationMixer(model);
 
-          // Play all animations
+         
           gltf.animations.forEach((clip) => {
             const action = mixerRef.current.clipAction(clip);
-            action.setLoop(THREE.LoopOnce, 1);  // Set the animation to loop once
-            action.clampWhenFinished = true;  // Stop the animation at the last frame
+            action.setLoop(THREE.LoopOnce, 1);  
+            action.clampWhenFinished = true;  
             action.play();
           });
 
-          // Adjust camera position to view the model
+         
           const box = new THREE.Box3().setFromObject(model);
           const center = box.getCenter(new THREE.Vector3());
           const size = box.getSize(new THREE.Vector3());
           const maxDim = Math.max(size.x, size.y, size.z);
           const distance = maxDim / Math.tan((Math.PI / 180) * camera.fov / 2);
-          const zoomFactor = -7;  // Reducing the zoom
-          camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * 0.7); // Adjusting camera position
+          const zoomFactor = -7; 
+          camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * 0.7); 
           camera.lookAt(center);
 
           renderer.render(scene, camera);
 
           const animate = () => {
             const delta = clock.getDelta();
-            // Update mixer for animations
+           
             if (mixerRef.current) {
-              mixerRef.current.update(delta); // Pass delta time
+              mixerRef.current.update(delta); 
             }
 
             renderer.render(scene, camera);
@@ -73,7 +74,7 @@ export default function ModelViewer() {
           };
           animate();
 
-          // Set a timeout to remove the model after the animation duration
+         
           const maxDuration = Math.max(...gltf.animations.map(clip => clip.duration));
           setTimeout(() => {
             setEmailSent(true);
@@ -84,7 +85,7 @@ export default function ModelViewer() {
                 child.material.dispose();
               }
             });
-          }, maxDuration * 1000);  // Convert duration to milliseconds
+          }, maxDuration * 1000);  
         },
         undefined,
         (error) => {

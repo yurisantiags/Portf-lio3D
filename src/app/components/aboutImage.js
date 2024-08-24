@@ -1,10 +1,10 @@
-'use client'; // Certifique-se de usar 'use client' aqui
+'use client'; 
 
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 function Imagem(props) {
-  const isDesktop = useMediaQuery({ minWidth: 769 }); // Define a largura mínima para considerar como tela desktop
+  const isDesktop = useMediaQuery({ minWidth: 769 }); 
   const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
@@ -12,10 +12,10 @@ function Imagem(props) {
   }, [isDesktop]);
 
   if (!showImage) {
-    return null; // Retorna null se não estiver em uma tela desktop
+    return null; 
   }
 
-  const imagePath = '/img/perf-2.png'; // Substitua 'sua-imagem.jpg' pelo nome da sua imagem
+  const imagePath = '/img/perf-2.png'; 
 
   return (
     <div className=''>

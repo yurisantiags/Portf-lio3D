@@ -11,7 +11,6 @@ export default function ProjectsPage() {
 
   return (
     <section id='projects-section' className='h-screen mt-72 flex flex-col justify-center items-center'>
-      {/* <Navbar /> */}
       <div className='flex justify-center items-center flex-col'>
         <div className=' mt-16 text-center'>
           <h3 data-aos="fade-up" className='text-gray-500 text-sm font-semibold text-uppercase'>
@@ -27,7 +26,6 @@ export default function ProjectsPage() {
           <Soon />
         </div>
       </div>
-      {/* <Footer /> */}
     </section>
   );
 }

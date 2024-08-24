@@ -1,5 +1,5 @@
 'use client';   
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const EmailBox = () => {
   const [copied, setCopied] = useState(false);
@@ -10,7 +10,7 @@ const EmailBox = () => {
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
-    }, 1500); // Reset copied state after 1.5 seconds
+    }, 1500); 
   };
 
   return (

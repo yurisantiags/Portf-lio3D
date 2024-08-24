@@ -11,19 +11,19 @@ export default function Navbar() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Adiciona rolagem suave
+      behavior: 'smooth', 
     });
     if (mobileMenuOpen) {
-      toggleMobileMenu(); // Fecha o menu móvel
+      toggleMobileMenu(); 
     }
   };
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' }); // Adiciona rolagem suave
+      section.scrollIntoView({ behavior: 'smooth' }); 
       if (mobileMenuOpen) {
-        toggleMobileMenu(); // Fecha o menu móvel
+        toggleMobileMenu(); 
       }
     }
   };
