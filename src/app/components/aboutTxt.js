@@ -6,7 +6,7 @@ export default function AboutTxt() {
     const heading = document.querySelector('.animated-heading');
     const letters = heading.textContent.split('');
     heading.textContent = '';
-    
+
     letters.forEach(letter => {
       const span = document.createElement('span');
       span.textContent = letter;
@@ -14,7 +14,7 @@ export default function AboutTxt() {
       heading.appendChild(span);
     });
 
-    heading.addEventListener('mouseover', () => { 
+    heading.addEventListener('mouseover', () => {
       const animatedLetters = document.querySelectorAll('.animated-letter');
       animatedLetters.forEach((letter, index) => {
         setTimeout(() => {
@@ -37,16 +37,16 @@ export default function AboutTxt() {
         <h2 className="font-semibold text-black text-2xl mb-4 animated-heading">About Me</h2>
         <div className="mt-4">
           <h4 className="font-semibold text-lg mt-4">Expertise/Skills:</h4>
-          <ul className="">
+          <ul className="px-10 md:px-0">
             <li>Front-end: Proficient in Bootstrap, Tailwind, HTML, CSS, SASS, JavaScript, PHP, Next.js, and React.</li>
             <li>Design: Comprehensive experience in designing and implementing complete websites, including 3D modeling and animations (Three.js).</li>
             <li>Design Tools: Figma, Photoshop, Canva, and Blender.</li>
             <li>Back-end Integration: Experience with MySQL, Java, and API development.</li>
             <li>Cyber Security: Knowledge in vulnerability analysis and data protection using Python.</li>
-            <li >Version control using Git and Git Flow.</li>
+            <li>Version control using Git and Git Flow.</li>
           </ul>
           <h4 className="font-semibold text-lg mt-4">Experience:</h4>
-          <ul className="">
+          <ul className="px-14 md:px-0">
             <li>Development and maintenance of corporate websites.</li>
             <li>Design and development of front-end interfaces.</li>
             <li>Creation of 3D models and advanced visual elements.</li>
