@@ -21,8 +21,8 @@ export default function ProjectsPage() {
           </h2>
         </div>
         <div className='relative grid md:grid-cols-3 md:gap-4'>
-          <Soon />
-          <Soon />
+          <Soon />  
+          <Soon/>
           <Soon />
         </div>
       </div>
