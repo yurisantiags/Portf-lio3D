@@ -25,32 +25,18 @@ html {
 }
 
 body {
-  /* background-image: url(/img/background.png); */
-  /* background-color: rgb(33, 33, 36);   */
   background-color: white;
   background-repeat: no-repeat;
  background-size: cover;
   
 }
 
+.sc-fqkvVR,
+.drFDOa{
+  display: none !important;
+}
 
 
-/* Text.css */
-
-/* @keyframes slide {
-  0%, 100% {
-    position: absolute;
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  1%, 100% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-} */
 
 
 @keyframes slide {
@@ -82,14 +68,14 @@ body {
 }
 
 .animated-slide span:nth-child(1) {
-  animation-delay: 1s; /* Atraso para a primeira letra */
+  animation-delay: 1s; 
 }
 
 .animated-slide span:nth-child(2) {
-  animation-delay: 2s; /* Atraso para a segunda letra */
+  animation-delay: 2s; 
 }
 
-/* text about */
+
 .cb-tagreel-item {
 	position: relative;
 	line-height: 100%;
@@ -106,46 +92,6 @@ body {
 	-webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
 }
 
-/* Adicione isso ao seu arquivo CSS */
-/* .animated-letter {
-  display: inline-block;
-  transition: transform 0.2s ease-in-out;
-}
-
-.animated-heading:hover .animated-letter {
-  transform: translateX(0);
-} */
-
-
-
-/* Adicione este CSS no seu arquivo de estilos */
-/* Estiliza a seta do cursor */
-
-/* Estiliza o círculo ao redor da seta do cursor */
-/* @keyframes pulse {
-  0% {
-    transform: scale(0.8);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-} */ 
-
-/* .white-circle {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: pulse 1s infinite;
-} */
-
-
-
-/* Adicione este CSS no seu arquivo de estilos */
 .cursor-circle {
   position: fixed;
   width: 20px;
@@ -153,6 +99,6 @@ body {
   background-color: white;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999; /* Garante que o círculo apareça sobre todos os elementos */
-  transition: transform 0.1s ease; /* Adiciona uma transição suave */
+  z-index: 9999; 
+  transition: transform 0.1s ease; 
 }

@@ -1,6 +1,6 @@
 'use client '
 import Imagem from '../components/aboutImage';
-import AboutTxt from '../components/aboutTxt';
+import TimeLine from '../components/timeline';
 
 export default function About() {
   return (
@@ -8,7 +8,7 @@ export default function About() {
       <div className="flex flex-col justify-center items-center">
         <div className="flex justify-center md:pl-24 md:pb-14">
           <Imagem src="" alt="me"/>
-          <AboutTxt/>
+         <TimeLine/>
         </div>
       </div>
     </main>
