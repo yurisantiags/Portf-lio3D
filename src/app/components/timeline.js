@@ -1,6 +1,6 @@
 import { Event, Events, Timeline } from 'vertical-timeline-component-react';
 
-const Main = () => {
+const TimeLine = () => {
 	const customTheme = {
 		borderDotColor: '#000',
 		descriptionColor: '#000',
@@ -87,4 +87,4 @@ const Main = () => {
         
 	);
 };
-export default Main;
+export default TimeLine;
