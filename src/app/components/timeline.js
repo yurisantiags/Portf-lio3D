@@ -80,7 +80,6 @@ const Main = () => {
 					
 					description={[
 						"That was a bit about me and my skllis in timeline format",
-						
 					]}
 				/>
 			</Events>
