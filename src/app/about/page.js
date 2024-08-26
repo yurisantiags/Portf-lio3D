@@ -1,10 +1,10 @@
-'use client '
+
 import { Event, Events, Timeline } from 'vertical-timeline-component-react';
 import Image from '../components/aboutImage';
 
 	const customTheme = {
 		borderDotColor: '#000',
-		descriptionColor: '#000',
+		descriptionColor: '#000', 
 		dotColor: '#fff',
 		eventColor: '#000',
 		lineColor: '#000',
@@ -29,7 +29,7 @@ export default function About() {
 				<Event
 					title="3D Front-end"
 					description={[
-						"3D front end development using threee.js in next.js",
+						"3D front end development using threee.js in next.js"
 					]}
 				/>
 			</Events>
@@ -41,7 +41,7 @@ export default function About() {
 				<Event
 					title="Design Tools:"
 					description={[
-						" Figma, Photoshop, Canva, and Blender.",
+						" Figma, Photoshop, Canva, and Blender."
 					]}
 				/>
 			</Events>
@@ -54,7 +54,7 @@ export default function About() {
 					title="Database"
 					description={[
 						"Database administration with Mysql",
-						'Integrating java information with databases',
+						'Integrating java information with databases'
 					]}
 				/>
 			</Events>
@@ -66,7 +66,7 @@ export default function About() {
 			>
             <Event
 					description={[
-						"Information security study for better development ",
+						"Information security study for better development "
 					]}
 				/>
 			</Events>
@@ -78,7 +78,7 @@ export default function About() {
             <Event
 					
 					description={[
-						"That was a bit about me and my skllis in timeline format",
+						"That was a bit about me and my skllis in timeline format"
 					]}
 				/>
 			</Events>
