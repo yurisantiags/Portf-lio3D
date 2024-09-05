@@ -39,7 +39,7 @@ export default function ContactFormWithModel() {
     } catch (error) {
       console.error('Erro', error);
       setEmailError(true);
-    }
+    } 
   };
 
 
