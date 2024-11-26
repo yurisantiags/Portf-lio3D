@@ -25,12 +25,10 @@ export default function ModelViewer() {
 
       const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
       scene.add(ambientLight);
-
       const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
       directionalLight.position.set(0, 10, 10);
       directionalLight.castShadow = true;
       scene.add(directionalLight);
-
       const loader = new GLTFLoader();
       loader.load(
         'img/scene-32.gltf',
@@ -38,19 +36,13 @@ export default function ModelViewer() {
           const model = gltf.scene;
           modelRef.current = model;
           scene.add(model);
-
-          // Create mixer for animations
           mixerRef.current = new AnimationMixer(model);
-
-         
           gltf.animations.forEach((clip) => {
             const action = mixerRef.current.clipAction(clip);
-            action.setLoop(THREE.LoopOnce, 1);  
-            action.clampWhenFinished = true;  
+            action.setLoop(THREE.LoopOnce, 1);
+            action.clampWhenFinished = true;
             action.play();
           });
-
-         
           const box = new THREE.Box3().setFromObject(model);
           const center = box.getCenter(new THREE.Vector3());
           const size = box.getSize(new THREE.Vector3());
@@ -59,22 +51,16 @@ export default function ModelViewer() {
           const zoomFactor = -7; 
           camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * 0.7); 
           camera.lookAt(center);
-
           renderer.render(scene, camera);
-
           const animate = () => {
             const delta = clock.getDelta();
-           
             if (mixerRef.current) {
-              mixerRef.current.update(delta); 
+              mixerRef.current.update(delta);
             }
-
             renderer.render(scene, camera);
-            requestAnimationFrame(animate);
+            equestAnimationFrame(animate);
           };
           animate();
-
-         
           const maxDuration = Math.max(...gltf.animations.map(clip => clip.duration));
           setTimeout(() => {
             setEmailSent(true);
@@ -85,22 +71,19 @@ export default function ModelViewer() {
                 child.material.dispose();
               }
             });
-          }, maxDuration * 1000);  
+          }, maxDuration * 1000);
         },
         undefined,
         (error) => {
           console.error('Error loading GLTF model', error);
         }
       );
-
       function handleResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth * 0.7, window.innerHeight * 0.7);
       }
-
       window.addEventListener('resize', handleResize);
-
       return () => {
         window.removeEventListener('resize', handleResize);
         if (rendererRef.current && sceneRef.current) {
@@ -110,7 +93,6 @@ export default function ModelViewer() {
       };
     }
   }, []);
-
   return (
     <div>
       <div ref={sceneRef} className='relative' style={{ width: '70vw', height: '70vh', overflow: 'hidden' }}>

@@ -24,7 +24,6 @@ export default function Soon(){
         </p>
       </a>
         </div>
-     
     </div>
     )
 }

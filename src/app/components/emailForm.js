@@ -12,7 +12,7 @@ export default function EmailForm() {
             id="email"
             type="email"
             placeholder="Coming soon"
-            disabled 
+            disabled
             required
           />
         </form>

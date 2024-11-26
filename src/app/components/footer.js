@@ -26,21 +26,18 @@ export default function Footer(){
         <div className=' hidden md:pl-96 md:block pr-8 md:pr-0 mt-4'>
         <EmailForm/>
         </div>
-        
         </div>
-       
         <hr className='opacity-15'></hr>
-       
         <div className="md:justify-start md:flex gap-2">
         <div className=' text-xs text-gray-500 md:text-sm md:pl-48 mt-3 justify-center flex '>
         &copy; 2023 Developed by{'   '}
-         <a
+        <a
           href="https://github.com/YuriSantiag" className='text-gray-700' 
           style={{ textDecoration: '', color: '' }}
-          target="_blank"
+          target="_blan"
           rel="noopener noreferrer"
         >
-           @yurisantiag
+          @yurisantiag
         </a>
         </div>
         <div className='justify-center md:ml-64 flex items-center gap-4'>

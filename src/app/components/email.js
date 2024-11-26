@@ -1,4 +1,4 @@
-'use client';   
+'use client';
 import { useState } from 'react';
 
 const EmailBox = () => {
@@ -10,7 +10,7 @@ const EmailBox = () => {
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
-    }, 1500); 
+    }, 1500);
   };
 
   return (

@@ -25,8 +25,8 @@ export default function ContactFormWithModel() {
     event.preventDefault();
 
     const templateParams = {
-      from_name: name, 
-      message: message, 
+      from_name: name,
+      message: message,
       email: email
     }
 
@@ -93,9 +93,9 @@ export default function ContactFormWithModel() {
 
           const controls = new OrbitControls(camera, renderer.domElement);
           controlsRef.current = controls;
-          controls.enableRotate = false;  
-          controls.enableZoom = false;    
-          controls.enablePan = false;     
+          controls.enableRotate = false;
+          controls.enableZoom = false;
+          controls.enablePan = false;
           controls.minPolarAngle = Math.PI / 2;
           controls.maxPolarAngle = Math.PI / 2;
 
@@ -116,15 +116,14 @@ export default function ContactFormWithModel() {
           audioRef.current = new Audio('img/email.mp3');
           audioRef.current.play();
 
-       
           setTimeout(() => {
             setAnimationDone(true);
-            setShowModel(false);  
+            setShowModel(false);
             setName('');
             setEmail('');
             setMessage('');
             audioRef.current.pause();
-            audioRef.current.currentTime = 0; 
+            audioRef.current.currentTime = 0;
           }, 5000);
         },
         undefined,
@@ -203,9 +202,6 @@ export default function ContactFormWithModel() {
                 className="w-full px-4 py-4 border rounded-md focus:outline-none focus:border-gray-500"
               ></textarea>
             </div>
-            {/* <div className="text-red-500 text-xs text-center mb-4">
-              *Backend ainda em desenvolvimento, mas clique em submit para ver a animação 3D*
-            </div> */}
             <div className="flex justify-end">
               <button type="submit" className="bg-black hover:opacity-80 text-white shadow-xl px-4 py-2 inline-flex rounded-md">Submit</button>
             </div>
