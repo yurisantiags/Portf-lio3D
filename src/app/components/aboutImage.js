@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -11,10 +11,10 @@ function Imagem(props) {
   }, [isDesktop]);
 
   if (!showImage) {
-    return null; 
+    return null;
   }
 
-  const imagePath = '/img/perf-2.png'; 
+  const imagePath = '/img/perf-2.png';
 
   return (
     <div className=''>

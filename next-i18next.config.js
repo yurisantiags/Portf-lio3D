@@ -4,4 +4,5 @@ module.exports = {
   //   locales: ['en'],
   //   defaultLocale: 'en',
   // },
+  staticPageGenerationTimeout: 120,
 };
