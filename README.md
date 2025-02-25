@@ -1,7 +1,7 @@
 ## Portfolio 3D
 
 ## Status
-This project brings together various technologies, including a 3D model that I made in blender along with a rendering that was done with threejs. <br/> https://portfolio3dys.vercel.app
+This project brings together various technologies, including a 3D model that I made in blender along with a rendering that was done with threejs. <br/> https://yurisantiag.vercel.app
 
 
 ## Technologies
