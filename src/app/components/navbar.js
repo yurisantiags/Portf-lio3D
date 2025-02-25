@@ -11,17 +11,17 @@ export default function Navbar() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', 
+      behavior: 'smooth',
     });
     if (mobileMenuOpen) {
-      toggleMobileMenu(); 
+      toggleMobileMenu();
     }
   };
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' }); 
+      section.scrollIntoView({ behavior: 'smooth' });
       if (mobileMenuOpen) {
         toggleMobileMenu(); 
       }
@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-50 bg-opacity-10 fixed w-full top-0 z-10">
       <div className="container mx-auto flex items-center justify-between">
-        <a href="#" className="pointer-events-none" /*onClick={scrollToTop}*/>
+        <a href="#" className="pointer-events-none">
           {/* <img src="img/Design-3.png" className=" h-10 mt-4 w-auto ml-4" /> */}
         </a>
         <div className="hidden md:flex space-x-4">
@@ -48,7 +48,7 @@ export default function Navbar() {
         <div className="md:hidden flex items-center">
           <button onClick={toggleMobileMenu} className="text-gray-600 pt-4 pr-3 hover:text-gray-300">
             {mobileMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 text-wrap w-6" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (

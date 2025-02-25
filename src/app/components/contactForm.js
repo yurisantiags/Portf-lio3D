@@ -112,7 +112,6 @@ export default function ContactFormWithModel() {
           };
           animate();
 
-  
           audioRef.current = new Audio('img/email.mp3');
           audioRef.current.play();
 
@@ -160,7 +159,7 @@ export default function ContactFormWithModel() {
   return (
     <div>
       {!animationDone && !showModel && (
-        <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-lg shadow-lg">
+        <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-3xl shadow-md border border-gray-300">
           <h2 className="text-2xl font-semibold mb-4 text-black">Contact me</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -210,7 +209,7 @@ export default function ContactFormWithModel() {
         </div>
       )}
       {animationDone && !showModel && (
-        <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-lg shadow-lg text-center">
+        <div className="max-w-md mx-auto px-9 py-4 bg-white rounded-3xl shadow-xl border border-gray-300 text-center">
           <h2 className="text-2xl font-semibold mb-4 text-black">Email Sent</h2>
           <p className="text-gray-700">Thank you for your submission!</p>
         </div>

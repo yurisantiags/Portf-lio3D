@@ -51,6 +51,7 @@ export default function ModelViewer() {
           const zoomFactor = -7; 
           camera.position.set(center.x - (maxDim * zoomFactor), center.y, center.z + distance * 0.7); 
           camera.lookAt(center);
+          camera.localToWorld(center); //test 1
           renderer.render(scene, camera);
           const animate = () => {
             const delta = clock.getDelta();

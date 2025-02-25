@@ -1,6 +1,5 @@
 'use client';
 import { useRef } from 'react';
-import About from '../about/page';
 import LinkedinButton from '../components/LinkedinButton';
 import BackToTopButton from '../components/backButton';
 import Navbar from '../components/navbar';
@@ -8,6 +7,7 @@ import Projects from '../components/projectButton';
 import Text from '../components/text';
 import Contacts from '../contacts/page';
 import ProjectsPage from '../projects/page';
+import About from '../about/page';
 
 export default function Home() {
   const projectsSectionRef = useRef(null);
