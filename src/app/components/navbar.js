@@ -13,7 +13,7 @@ export default function Navbar() {
     };
 
     updateClock();
-    const interval = setInterval(updateClock, 60000);
+    const interval = setInterval(updateClock, 1000);
 
     return () => clearInterval(interval);
   }, []);
