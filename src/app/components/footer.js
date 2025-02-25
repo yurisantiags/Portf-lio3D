@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import EmailForm from './emailForm';
