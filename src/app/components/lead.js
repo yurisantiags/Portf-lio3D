@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 
-export default function Soon() {
+export default function Lead() {
   useEffect(() => {
     AOS.init();
   }, [])
@@ -19,10 +19,10 @@ export default function Soon() {
         
         <div className="absolute top-4 left-4 text-left">
           <h2 className="text-xl md:text-2xl font-semibold text-black opacity-90 font-sans tracking-wide">
-            Landing Page
+            Lead Capture Page
           </h2>
           <p className="text-sm md:text-base text-gray-600 font-light font-sans">
-            HTML, CSS & JavaScript
+            WordPress & Elementor
           </p>
         </div>
 
@@ -33,8 +33,8 @@ export default function Soon() {
           rel="noopener noreferrer"
         >
           <img 
-            src="img/notLanding.png"
-            alt="Imagem"
+            src="img/notLead.png"
+            alt="Lead Capture Page Preview"
             className="h-80 w-full object-cover rounded-xl mt-20"
           />
         </a>
