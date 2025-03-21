@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaHackerrank } from 'react-icons/fa';
 import EmailForm from './emailForm';
 
 export default function Footer() {
@@ -40,9 +40,9 @@ export default function Footer() {
           <a href="https://www.linkedin.com/in/yuri-santiago/" target="_blank" className="bg-black bg-opacity-5 md:ml-96 mt-2 hover:bg-gray-400 hover:text-white text-gray-900 p-2 rounded-full transition duration-300">
             <FaLinkedin className="h-4 w-4" />
           </a>
-          <div className="bg-gray-300 bg-opacity-50 mt-2 text-gray-500 p-2 rounded-full cursor-not-allowed">
-            <FaInstagram className="h-4 w-4" />
-          </div>
+          <a href="https://www.hackerrank.com/profile/yurisantiagox3" target="_blank" className="bg-black bg-opacity-5 mt-2 hover:bg-gray-400 hover:text-white text-gray-900 p-2 rounded-full transition duration-300">
+            <FaHackerrank className="h-4 w-4" />
+          </a>
           <a href="https://github.com/yurisantiags" target="_blank" className="bg-black bg-opacity-5 mt-2 hover:bg-gray-400 hover:text-white text-gray-900 p-2 rounded-full transition duration-300">
             <FaGithub className="h-4 w-4" />
           </a>
