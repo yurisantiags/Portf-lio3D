@@ -32,8 +32,8 @@ export default function Footer() {
       <div className="md:justify-start md:flex gap-2">
         <div className="text-xs text-gray-500 md:text-sm md:pl-48 mt-3 justify-center flex">
           &copy; 2023 Developed by{' '}
-          <a href="https://github.com/YuriSantiag" className="text-gray-700" target="_blank" rel="noopener noreferrer">
-            @yurisantiag
+          <a href="https://github.com/yurisantiags" className="text-gray-700" target="_blank" rel="noopener noreferrer">
+            @yurisantiags
           </a>
         </div>
         <div className="justify-center md:ml-64 flex items-center gap-4">
@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="bg-gray-300 bg-opacity-50 mt-2 text-gray-500 p-2 rounded-full cursor-not-allowed">
             <FaInstagram className="h-4 w-4" />
           </div>
-          <a href="https://github.com/YuriSantiag" target="_blank" className="bg-black bg-opacity-5 mt-2 hover:bg-gray-400 hover:text-white text-gray-900 p-2 rounded-full transition duration-300">
+          <a href="https://github.com/yurisantiags" target="_blank" className="bg-black bg-opacity-5 mt-2 hover:bg-gray-400 hover:text-white text-gray-900 p-2 rounded-full transition duration-300">
             <FaGithub className="h-4 w-4" />
           </a>
         </div>
